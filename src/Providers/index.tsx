@@ -1,3 +1,3 @@
-import { providerChildren } from "../Types";
+import { ProviderChildren } from "../Types";
 
-export const Providers = ({ children }: providerChildren) => {};
+export const Providers = ({ children }: ProviderChildren) => {};
