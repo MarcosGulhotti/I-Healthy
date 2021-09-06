@@ -1,4 +1,4 @@
-import { HTMLAttributes, ReactNode } from "react";
+import { ReactNode } from "react";
 
 export interface ProviderChildren {
   children: ReactNode;
@@ -6,4 +6,9 @@ export interface ProviderChildren {
 
 export interface IBackgroundProps {
   image: string;
+}
+
+export interface ComponentButton {
+  children: ReactNode;
+  GreenTheme?: boolean;
 }
