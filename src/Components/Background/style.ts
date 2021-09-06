@@ -7,7 +7,7 @@ export const StyledBackground = styled.div`
   width: 100%;
 
   img {
-    position: absolute;
+    position: relative;
     z-index: 1;
     left: 50%;
     transform: translateX(-50%);
@@ -15,9 +15,10 @@ export const StyledBackground = styled.div`
   }
 
   span {
-    width: 400px;
-    height: 400px;
+    width: 200px;
+    height: 200px;
     background-color: var(--Second-Blue);
+    overflow: hidden;
     position: absolute;
     border-radius: 100%;
     z-index: 0;
