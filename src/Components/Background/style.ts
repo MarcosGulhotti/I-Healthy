@@ -15,10 +15,9 @@ export const StyledBackground = styled.div`
   }
 
   span {
-    width: 200px;
-    height: 200px;
+    width: 400px;
+    height: 400px;
     background-color: var(--Second-Blue);
-    overflow: hidden;
     position: absolute;
     border-radius: 100%;
     z-index: 0;
@@ -32,6 +31,16 @@ export const StyledBackground = styled.div`
   .second {
     top: 100px;
     left: 55px;
+    border-radius: 100% 0 0 100%;
+    max-width: 265px;
+
+    @media (min-width: 375px) {
+      max-width: 325px;
+    }
+
+    @media (min-width: 425px) {
+      max-width: 365px;
+    }
   }
 
   .third {
@@ -40,7 +49,18 @@ export const StyledBackground = styled.div`
   }
 
   .fourth {
-    bottom: -120px;
+    bottom: 0px;
     left: 115px;
+    border-radius: 100% 0 0 100%;
+    max-width: 205px;
+    max-height: 250px;
+
+    @media (min-width: 375px) {
+      max-width: 255px;
+    }
+
+    @media (min-width: 425px) {
+      max-width: 305px;
+    }
   }
 `
