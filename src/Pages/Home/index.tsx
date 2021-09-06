@@ -12,7 +12,7 @@ const Home = () => {
       <p>Bem vindo ao [aplicação], a sua plataforma de saúde, aqui você busca profissionais, marca consultas e realiza atendimentos.
         Para continuar, selecione abaixo.</p>
       <div>
-        <Button>Logar</Button>
+        <Button>Entrar</Button>
         <p>Ou</p>
         <Button GreenTheme> Registrar </Button>
       </div>

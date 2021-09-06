@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const StyledBackground = styled.div`
-  height: 100vh;
   background-color: var(--Background);
   z-index: -1;
   width: 100%;
