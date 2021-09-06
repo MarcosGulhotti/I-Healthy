@@ -31,6 +31,8 @@ export const StyledBackground = styled.div`
   .second {
     top: 100px;
     left: 55px;
+    border-radius: 100% 0 0 100%;
+    max-width: 265px;
   }
 
   .third {
@@ -39,7 +41,10 @@ export const StyledBackground = styled.div`
   }
 
   .fourth {
-    bottom: -120px;
+    bottom: 0px;
     left: 115px;
+    border-radius: 100% 0 0 100%;
+    max-width: 205px;
+    max-height: 250px;
   }
 `
