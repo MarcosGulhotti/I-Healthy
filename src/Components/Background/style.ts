@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 
 export const StyledBackground = styled.div`
-  background-color: var(--Background);
-  z-index: -1;
-  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
 
   img {
     position: relative;
@@ -18,7 +19,7 @@ export const StyledBackground = styled.div`
     height: 400px;
     background-color: var(--Second-Blue);
     position: absolute;
-    border-radius: 100%;
+    border-radius: 50%;
     z-index: 0;
   }
 
@@ -30,16 +31,6 @@ export const StyledBackground = styled.div`
   .second {
     top: 100px;
     left: 55px;
-    border-radius: 100% 0 0 100%;
-    max-width: 265px;
-
-    @media (min-width: 375px) {
-      max-width: 325px;
-    }
-
-    @media (min-width: 425px) {
-      max-width: 365px;
-    }
   }
 
   .third {
@@ -48,18 +39,7 @@ export const StyledBackground = styled.div`
   }
 
   .fourth {
-    bottom: 0px;
-    left: 115px;
-    border-radius: 100% 0 0 100%;
-    max-width: 205px;
-    max-height: 250px;
-
-    @media (min-width: 375px) {
-      max-width: 255px;
-    }
-
-    @media (min-width: 425px) {
-      max-width: 305px;
-    }
+    bottom: -145px;
+    left: 55px;
   }
 `
