@@ -1,10 +1,13 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-display: flex;
-flex-flow: column;
-align-items: center;
-text-align: center;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 999999;
+  margin-top: 20rem;
 >p{
   font-family: var(--Font-Saira);
   color: var(--Second-Black);
