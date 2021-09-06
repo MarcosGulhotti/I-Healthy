@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const StyledBackground = styled.div`
   max-width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
   position: relative;
   height: 100vh;
 
