@@ -7,7 +7,7 @@ export const StyledBackground = styled.div`
   width: 100%;
 
   img {
-    position: absolute;
+    position: relative;
     z-index: 1;
     left: 50%;
     transform: translateX(-50%);
@@ -33,6 +33,14 @@ export const StyledBackground = styled.div`
     left: 55px;
     border-radius: 100% 0 0 100%;
     max-width: 265px;
+
+    @media (min-width: 375px) {
+      max-width: 325px;
+    }
+
+    @media (min-width: 425px) {
+      max-width: 365px;
+    }
   }
 
   .third {
@@ -46,5 +54,13 @@ export const StyledBackground = styled.div`
     border-radius: 100% 0 0 100%;
     max-width: 205px;
     max-height: 250px;
+
+    @media (min-width: 375px) {
+      max-width: 255px;
+    }
+
+    @media (min-width: 425px) {
+      max-width: 305px;
+    }
   }
 `
