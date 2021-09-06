@@ -1836,6 +1836,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-icons@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@types/react-icons/-/react-icons-3.0.0.tgz#27ca2823a6add881d06a371bfff093afc1b9c829"
+  integrity sha512-Vefs6LkLqF61vfV7AiAqls+vpR94q67gunhMueDznG+msAkrYgRxl7gYjNem/kZ+as2l2mNChmF1jRZzzQQtMg==
+  dependencies:
+    react-icons "*"
+
 "@types/react-router-dom@^5.1.8":
   "integrity" "sha512-03xHyncBzG0PmDmf8pf3rehtjY0NpUj7TIN46FrT5n1ZWHPZvXz32gUyNboJ+xsL8cpg8bQVLcllptcQHvocrw=="
   "resolved" "https://registry.npmjs.org/@types/react-router-dom/-/react-router-dom-5.1.8.tgz"
@@ -9283,6 +9290,82 @@
   "version" "11.0.4"
   dependencies:
     "@babel/code-frame" "7.10.4"
+<<<<<<< HEAD
+    address "1.1.2"
+    browserslist "4.14.2"
+    chalk "2.4.2"
+    cross-spawn "7.0.3"
+    detect-port-alt "1.1.6"
+    escape-string-regexp "2.0.0"
+    filesize "6.1.0"
+    find-up "4.1.0"
+    fork-ts-checker-webpack-plugin "4.1.6"
+    global-modules "2.0.0"
+    globby "11.0.1"
+    gzip-size "5.1.1"
+    immer "8.0.1"
+    is-root "2.1.0"
+    loader-utils "2.0.0"
+    open "^7.0.2"
+    pkg-up "3.1.0"
+    prompts "2.4.0"
+    react-error-overlay "^6.0.9"
+    recursive-readdir "2.2.2"
+    shell-quote "1.7.2"
+    strip-ansi "6.0.0"
+    text-table "0.2.0"
+
+react-dom@^17.0.2:
+  version "17.0.2"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.2.tgz#ecffb6845e3ad8dbfcdc498f0d0a939736502c23"
+  integrity sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    scheduler "^0.20.2"
+
+react-error-overlay@^6.0.9:
+  version "6.0.9"
+  resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.9.tgz#3c743010c9359608c375ecd6bc76f35d93995b0a"
+  integrity sha512-nQTTcUu+ATDbrSD1BZHr5kgSD4oF8OFjxun8uAaL8RwPBacGBNPf/yAuVVdx17N8XNzRDMrZ9XcKZHCjPW+9ew==
+
+react-hook-form@^7.14.2:
+  version "7.14.2"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.14.2.tgz#e5615ba883588a6dd73bbbbbd7d3bb71b73440e3"
+  integrity sha512-32uvgKkaE/0vOncfnJdwQhfahhocPpcb5c7F4j9Eq7dOnqS2Hg8h70Bmt6KXb6veLSWJultc1+ik9QSfqXFmLA==
+
+react-hot-toast@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/react-hot-toast/-/react-hot-toast-2.1.1.tgz#56409ab406b534e9e58274cf98d80355ba0fdda0"
+  integrity sha512-Odrp4wue0fHh0pOfZt5H+9nWCMtqs3wdlFSzZPp7qsxfzmbE26QmGWIh6hG43CukiPeOjA8WQhBJU8JwtWvWbQ==
+  dependencies:
+    goober "^2.0.35"
+
+react-icons@*:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.2.0.tgz#6dda80c8a8f338ff96a1851424d63083282630d0"
+  integrity sha512-rmzEDFt+AVXRzD7zDE21gcxyBizD/3NqjbX6cmViAgdqfJ2UiLer8927/QhhrXQV7dEj/1EGuOTPp7JnLYVJKQ==
+
+react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1:
+  version "16.13.1"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
+  integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
+
+react-is@^17.0.1:
+  version "17.0.1"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.1.tgz#5b3531bd76a645a4c9fb6e693ed36419e3301339"
+  integrity sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA==
+
+react-refresh@^0.8.3:
+  version "0.8.3"
+  resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.8.3.tgz#721d4657672d400c5e3c75d063c4a85fb2d5d68f"
+  integrity sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg==
+
+react-router-dom@^5.2.1:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-5.2.1.tgz#34af8b551a4ce17487d3f80e651b91651978dff6"
+  integrity sha512-xhFFkBGVcIVPbWM2KEYzED+nuHQPmulVa7sqIs3ESxzYd1pYg8N8rxPnQ4T2o1zu/2QeDUWcaqST131SO1LR3w==
+=======
     "address" "1.1.2"
     "browserslist" "4.14.2"
     "chalk" "2.4.2"
@@ -9362,6 +9445,7 @@
   "integrity" "sha512-xhFFkBGVcIVPbWM2KEYzED+nuHQPmulVa7sqIs3ESxzYd1pYg8N8rxPnQ4T2o1zu/2QeDUWcaqST131SO1LR3w=="
   "resolved" "https://registry.npmjs.org/react-router-dom/-/react-router-dom-5.2.1.tgz"
   "version" "5.2.1"
+>>>>>>> 2bf8e08816320cd5dee05658fe496b83f9d4e5aa
   dependencies:
     "@babel/runtime" "^7.12.13"
     "history" "^4.9.0"
