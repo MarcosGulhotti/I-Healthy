@@ -6,6 +6,7 @@ export interface ProviderChildren {
 
 export interface IBackgroundProps {
   image: string;
+  children: ReactNode;
 }
 
 export interface ComponentButton {

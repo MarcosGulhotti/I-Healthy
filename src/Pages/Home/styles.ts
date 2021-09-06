@@ -6,8 +6,7 @@ export const Container = styled.div`
   align-items: center;
   text-align: center;
   position: relative;
-  z-index: 999999;
-  margin-top: 20rem;
+  z-index: 1;
 >p{
   font-family: var(--Font-Saira);
   color: var(--Second-Black);
