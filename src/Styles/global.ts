@@ -2,18 +2,37 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 
-body, div, ul, button, p, img, nav, a, input, h1, h2, select{
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    box-sizing: border-box;
-    text-decoration: none;
-    outline: none;
+    :root{
+        --Background: #F5F5F5;
+        --Main-Blue: #008FFF;
+        --Main-Green: #37DB7F;
+        --Main-Purple: #7988FD
+        --Main-Orange: #FE9901;
+        --Main-Black: #282830;
+        --Main-Gray: #9DA4B7;
+        --Second-Blue: #D9EEFF;
+        --Second-Green: #A3FFAC;
+        --Second-Black: #3D3838;
+        --Font-Roboto-Mono: 'Roboto Mono', monospace;
+        --Font-Saira: 'Saira', sans-serif;
+
     }
 
-button{
-    cursor: pointer;
-}
+    body, div, ul, button, p, img, nav, a, input, h1, h2, select{
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        box-sizing: border-box;
+        text-decoration: none;
+        outline: none;
+    }
+    body{
+        background-color: var(---Background);
+    }
+
+    button{
+        cursor: pointer;
+    }
 `;
 
 export default GlobalStyle;
