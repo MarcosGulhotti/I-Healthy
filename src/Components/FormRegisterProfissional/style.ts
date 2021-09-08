@@ -2,12 +2,19 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     
+   margin-top: 25px;
    position: relative; 
+   max-height: 450px;
                         
     form{
         margin: 0 auto;
         padding: 0 1rem;
         width: 80%;
+    }
+    
+    .container-inputs{
+        overflow: auto;
+        max-height: 350px;
     }
 
     .link{

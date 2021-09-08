@@ -20,7 +20,7 @@ export const FormRegisterPaciente = () => {
         .matches(
           /^((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
           "Senha deve conter ao menos uma letra maiúscula, uma minúscula, um número e um caracter especial"
-        ),
+        ), 
         date: yup.date().required("data obrigatório"),
         cpf: yup.string().required("CPF obrigatório"),
         genre: yup.string().required("gênero obrigatório"),
@@ -47,6 +47,7 @@ export const FormRegisterPaciente = () => {
                     error={errors.username?.message}
                     placeholder="Digite seu nome"
                     />
+
                 
                 <Input
                     icon={<HiOutlineMail/>}
@@ -65,7 +66,7 @@ export const FormRegisterPaciente = () => {
                     error={errors.password?.message}
                     placeholder="uma senha"
                 />
-
+                
                 <Input 
                     icon={<FaRegCalendarAlt/>}
                     type="date"
@@ -86,16 +87,21 @@ export const FormRegisterPaciente = () => {
                     
                     />
 
-                <Input 
+               <Input 
                     icon={<FaTransgender/>}
                     type="text"
                     name="genre"
                     register={register}
                     error={errors.genre?.message}
                     placeholder="Seu gênero"
-                    
-                    />
+                    IsSelect
+                    >
+                    <option value="">gênero</option>
+                    <option value="F">F</option>
+                    <option value="M">M</option>
 
+                </Input>
+ 
                 <Input 
                     icon={<FaMapMarkedAlt/>}
                     type="text"
@@ -104,33 +110,20 @@ export const FormRegisterPaciente = () => {
                     error={errors.address?.message}
                     placeholder="Seu endereço"
                     />
-                
-                <div>
 
-                    <FaMapMarkedAlt/>
-                    <select name="cars" id="cars">
-                        <option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
-                        <option value="mercedes">Mercedes</option>
-                        <option value="audi">Audi</option>
-                    </select>
+                    <p className="link"><Link to="/login">Já possui conta?</Link></p>
 
-                </div>
+                    <div className="container-Buttons">
+                        <div className="box-left">
+                            <Button type="submit" GreenTheme >Cadastrar-se</Button>
+                        </div>
 
-                <p className="link"><Link to="/login">Já possui conta?</Link></p>
+                        <p className="span-text"> Ou </p>
 
-                <div className="container-Buttons">
-                    <div className="box-left">
-                        <Button GreenTheme >Cadastrar-se</Button>
+                        <div className="box-right">
+                            <Button>Voltar</Button>
+                        </div>
                     </div>
-
-                    <p className="span-text"> Ou </p>
-
-                    <div className="box-right">
-                        <Button>Voltar</Button>
-                    </div>
-                </div>
-        
                 </form>
             </Container>
     )

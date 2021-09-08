@@ -12,6 +12,8 @@ export interface IBackgroundProps {
 export interface ComponentButton {
   children: ReactNode;
   GreenTheme?: boolean;
+  type?: string;
+  onClick?:(value: string) => void;
 }
 
 export interface SecondButtonProps {
@@ -38,7 +40,7 @@ export interface RegisterPaciente{
   password: string;
   date: string;
   cpf: string;
-  gerenro: string;
+  genre: string;
   address: string;
 }
 

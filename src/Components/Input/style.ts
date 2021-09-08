@@ -5,6 +5,7 @@ export const StyledContainer = styled.div`
   align-items: center;
   margin: 0 auto;
   padding: 5px;
+  margin-bottom: 10px;
   /* width: 350px; */
   width: 100%;
   border-bottom: 3px solid var(--Main-Black);
