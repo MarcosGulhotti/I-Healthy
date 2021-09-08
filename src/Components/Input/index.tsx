@@ -29,7 +29,7 @@ export const Input = ({
           {icon}
           <input
             placeholder={!!error ? error : placeholder}
-            //   {...register(name)}
+            {...register(name)} // linha estava comentada...
             {...rest}
             type={type}
           />

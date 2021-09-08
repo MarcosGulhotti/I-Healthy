@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
         --Background: #F5F5F5;
         --Main-Blue: #008FFF;
         --Main-Green: #37DB7F;
-        --Main-Purple: #7988FD
+        --Main-Purple: #7988FD;
         --Main-Orange: #FE9901;
         --Main-Black: #282830;
         --Main-Gray: #9DA4B7;
@@ -32,6 +32,11 @@ const GlobalStyle = createGlobalStyle`
 
     button{
         cursor: pointer;
+    }
+    a{
+        color: var(--Main-Orange);
+        font-family: 'Saira';
+        font-weight: bold;
     }
 `;
 

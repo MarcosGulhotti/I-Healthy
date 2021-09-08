@@ -24,3 +24,28 @@ export interface ComponentInput {
   placeholder?: string;
   type?: string;
 }
+
+
+export interface RegisterPaciente{
+  username: string;
+  email: string;
+  password: string;
+  date: string;
+  cpf: string;
+  gerenro: string;
+  address: string;
+}
+
+
+export interface RegisterProfissional{
+  username: string;
+  date: string;
+  cpf: string;
+  gerenro: string;
+  address: string;
+  register:string;
+  specialty: string;
+  demands: string;
+  typeCalls: string;
+  schedule:string;
+}
