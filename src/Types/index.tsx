@@ -14,6 +14,12 @@ export interface ComponentButton {
   GreenTheme?: boolean;
 }
 
+export interface SecondButtonProps {
+  children: ReactNode;
+  func: (value: string) => void;
+  param: string;
+}
+
 export interface ComponentInput {
   children?: ReactNode;
   IsSelect?: boolean;
