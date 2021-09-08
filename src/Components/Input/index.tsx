@@ -18,21 +18,23 @@ export const Input = ({
         <>
           {icon}
           <select
-            //   {...register(name)}
+             {...register(name)}
             {...rest}
           >
             {children}
           </select>
+          {!!error && console.log(error)}
         </>
       ) : (
         <>
           {icon}
           <input
             placeholder={!!error ? error : placeholder}
-            //   {...register(name)}
+            {...register(name)}
             {...rest}
             type={type}
-          />
+            />
+            {!!error && console.log(error)}
         </>
       )}
     </StyledContainer>

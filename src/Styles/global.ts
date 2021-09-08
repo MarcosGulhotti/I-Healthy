@@ -34,6 +34,11 @@ const GlobalStyle = createGlobalStyle`
     button{
         cursor: pointer;
     }
+    a{
+        color: var(--Main-Orange);
+        font-family: 'Saira';
+        font-weight: bold;
+    }
 `;
 
 export default GlobalStyle;
