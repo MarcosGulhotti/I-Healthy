@@ -10,8 +10,6 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { RegisterProfissional } from '../../Types/index'
 import * as yup from 'yup'
 import { Button } from "../Button"
-import { useState } from "react"
-
 
 
 export const FormRegisterProfissional = () => {
