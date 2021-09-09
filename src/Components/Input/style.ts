@@ -1,14 +1,15 @@
 import styled from "styled-components";
+import { IinputStyle } from "../../Types";
 
-export const StyledContainer = styled.div`
+export const StyledContainer = styled.div<IinputStyle>`
   display: flex;
   align-items: center;
   margin: 0 auto;
   padding: 5px;
   margin-bottom: 10px;
-  /* width: 350px; */
   width: 100%;
-  border-bottom: 3px solid var(--Main-Black);
+  border-bottom: ${(props) =>
+    !!props.error ? "3px solid #ff4500" : "3px solid #282830"};
 
   i {
     font-size: 30px;
