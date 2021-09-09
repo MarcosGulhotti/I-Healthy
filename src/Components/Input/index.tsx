@@ -13,17 +13,13 @@ export const Input = ({
   ...rest
 }: ComponentInput) => {
   return (
-    <StyledContainer>
+    <StyledContainer error={error}>
       {IsSelect ? (
         <>
           {icon}
-          <select
-             {...register(name)}
-            {...rest}
-          >
+          <select {...register(name)} {...rest}>
             {children}
           </select>
-          {!!error && console.log(error)}
         </>
       ) : (
         <>
@@ -34,7 +30,6 @@ export const Input = ({
             {...rest}
             type={type}
             />
-            {!!error && console.log(error)}
         </>
       )}
     </StyledContainer>
