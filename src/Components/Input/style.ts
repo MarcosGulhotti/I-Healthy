@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import { IinputStyle } from "../../Types";
 
-export const StyledContainer = styled.div<IinputStyle>`
+export const StyledContainer = styled.div<{ error: string }>`
   display: flex;
   align-items: center;
   margin: 0 auto;
