@@ -12,6 +12,8 @@ export interface IBackgroundProps {
 export interface ComponentButton {
   children: ReactNode;
   GreenTheme?: boolean;
+  type?: string;
+  onClick?: () => void;
 }
 
 export interface SecondButtonProps {
@@ -29,4 +31,30 @@ export interface ComponentInput {
   error: string;
   placeholder?: string;
   type?: string;
+}
+export interface IinputStyle {
+  error: string;
+}
+
+export interface RegisterPaciente {
+  username: string;
+  email: string;
+  password: string;
+  date: string;
+  cpf: string;
+  genre: string;
+  address: string;
+}
+
+export interface RegisterProfissional {
+  username: string;
+  date: string;
+  cpf: string;
+  gerenro: string;
+  address: string;
+  register: string;
+  specialty: string;
+  demands: string;
+  typeCalls: string;
+  schedule: string;
 }
