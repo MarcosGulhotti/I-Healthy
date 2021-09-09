@@ -1,11 +1,13 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const StyledBackground = styled.div`
   max-width: 100%;
   overflow: hidden;
   position: relative;
   height: 100vh;
-
+  @media (max-height: 764) {
+    overflow-y: auto;
+  }
   img {
     position: relative;
     z-index: 1;
@@ -42,4 +44,4 @@ export const StyledBackground = styled.div`
     bottom: -145px;
     left: 55px;
   }
-`
+`;

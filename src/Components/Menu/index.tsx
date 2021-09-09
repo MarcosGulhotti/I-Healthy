@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export const Menu = () => {
   const marker: any = document.querySelector('#marker')
-  const list = document.querySelectorAll('ul li')
+  /* const list = document.querySelectorAll('ul li') */
   
   const moveIndicator = (num: number) => {
     marker.style.left = num + 'px'
