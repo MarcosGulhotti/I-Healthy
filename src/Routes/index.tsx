@@ -15,11 +15,11 @@ const Router = () => {
       </Route>
 
       <Route exact path="/professional">
-        <PageRegister profissional/>
+        <PageRegister profissional />
       </Route>
 
-      <Route path = "/ChoosePage">
-        <ChoosePage/>
+      <Route path="/choosePage">
+        <ChoosePage />
       </Route>
 
       <Route path = "/login">

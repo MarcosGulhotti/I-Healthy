@@ -13,7 +13,7 @@ export interface ComponentButton {
   children: ReactNode;
   GreenTheme?: boolean;
   type?: string;
-  onClick?:() => void;
+  onClick?: () => void;
 }
 
 export interface SecondButtonProps {
@@ -32,9 +32,11 @@ export interface ComponentInput {
   placeholder?: string;
   type?: string;
 }
+export interface IinputStyle {
+  error: string;
+}
 
-
-export interface RegisterPaciente{
+export interface RegisterPaciente {
   username: string;
   email: string;
   password: string;
@@ -44,21 +46,24 @@ export interface RegisterPaciente{
   address: string;
 }
 
-
-export interface RegisterProfissional{
+export interface RegisterProfissional {
   username: string;
   date: string;
   cpf: string;
   gerenro: string;
   address: string;
-  register:string;
+  register: string;
   specialty: string;
   demands: string;
   typeCalls: string;
+<<<<<<< HEAD
   schedule:string;
 }
 
 export interface ILoginUser {
   email: string;
   password: string;
+=======
+  schedule: string;
+>>>>>>> a6be5e99b9692f7c921ae0e7551d195d6391a76f
 }
