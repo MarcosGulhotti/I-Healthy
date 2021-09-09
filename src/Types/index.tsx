@@ -32,9 +32,6 @@ export interface ComponentInput {
   placeholder?: string;
   type?: string;
 }
-export interface IinputStyle {
-  error: string;
-}
 
 export interface RegisterPaciente {
   username: string;
