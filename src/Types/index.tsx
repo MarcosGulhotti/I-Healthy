@@ -56,14 +56,11 @@ export interface RegisterProfissional {
   specialty: string;
   demands: string;
   typeCalls: string;
-<<<<<<< HEAD
-  schedule:string;
+  schedule: string;
 }
+
 
 export interface ILoginUser {
   email: string;
   password: string;
-=======
-  schedule: string;
->>>>>>> a6be5e99b9692f7c921ae0e7551d195d6391a76f
 }

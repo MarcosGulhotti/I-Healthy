@@ -14,6 +14,7 @@ import { api } from "../../Services/api"
 import { useState } from "react"
 import { useHistory } from "react-router-dom"
 import toast from "react-hot-toast"
+/* import BeatLoader  from 'react-spinners/BeatLoader' */
 
 
 export const FormRegisterProfissional = () => {
@@ -43,16 +44,16 @@ export const FormRegisterProfissional = () => {
     })
 
     const history = useHistory()
-    const [ loadind, setLoading ] = useState<boolean>(false)
+    const [ loading, setLoading ] = useState<boolean>(false)
 
     const onSubmit = async (user: RegisterProfissional) => {
         
         setLoading(true)
-        const { data } = await api.post("/register", user)
+        const { data } = await api.post("/register", {...user, isProfessional: true})
         setLoading(false)   
         toast.success("Cadastro realizado com sucesso")
         console.log(data)
-       /*  history.push("/login") */ // ou dashboard
+        history.push("/login")  // ou dashboard
         reset()
     }
 
@@ -196,9 +197,19 @@ export const FormRegisterProfissional = () => {
                      <p className="link"><Link to="/login">Já possui conta?</Link></p>
 
                     <div className="container-Buttons">
-
+                        
                         <div className="box-left">
-                             <Button type="submit" GreenTheme >Cadastrar-se</Button>
+                             {
+                                 loading?
+                                 (
+                                     <Button type="submit" GreenTheme > . . . . . </Button>
+                                 )
+                                     :
+                                 (
+                                     <Button type="submit" GreenTheme >Cadastrar-se</Button>
+                                 )
+                             }
+
                         </div>
 
                         <p className="span-text"> Ou </p>

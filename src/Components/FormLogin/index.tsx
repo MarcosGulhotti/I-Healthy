@@ -11,6 +11,7 @@ import { Container } from './style'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import toast from 'react-hot-toast'
+import BeatLoader from "react-spinners/BeatLoader";
 
 export const FormLogin = () => {
 
@@ -65,12 +66,13 @@ export const FormLogin = () => {
             
             <p className="link"><Link to="/">Não possui conta?</Link></p>
 
+              
             <div className="container-Buttons">
                 <div className="box-left">
                     {
                         loading?
                         (
-                            <Button GreenTheme >...</Button> // colocar spinners
+                            <Button GreenTheme > .  .  .  .</Button> // colocar spinners
                         )
                         :
                         (

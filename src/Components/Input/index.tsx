@@ -29,11 +29,7 @@ export const Input = ({
             {...register(name)}
             {...rest}
             type={type}
-<<<<<<< HEAD
             />
-=======
-          />
->>>>>>> a6be5e99b9692f7c921ae0e7551d195d6391a76f
         </>
       )}
     </StyledContainer>

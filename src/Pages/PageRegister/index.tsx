@@ -9,8 +9,6 @@ interface Props{
     profissional?: boolean;
 }
 
-
-
 const PageRegister = ({ profissional }: Props) => {
     return (
         <Container>

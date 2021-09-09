@@ -35,16 +35,16 @@ export const FormRegisterPaciente = () => {
     })
 
     const [loading, setLoading ] = useState<boolean>(false)
-    const history = useHistory()
+    const history = useHistory() 
   
-    const onSubmit = async (_data: RegisterPaciente) => {
+    const onSubmit = async (user: RegisterPaciente) => {
         setLoading(true)
         reset()
-        const {data} = await api.post("/register", _data)
+        const {data} = await api.post("/register",  {...user, isProfessional: false})
         console.log(data)
         toast.success("Cadastro realizado com sucesso")
         setLoading(false) 
-       /*  history.push("/login") */ // ou dashboard
+        history.push("/login")   // ou dashboard
     }
     
     return(
@@ -129,7 +129,7 @@ export const FormRegisterPaciente = () => {
                             {
                                 loading?
                                 (
-                                    <Button type="submit" GreenTheme >...</Button> // colocar spinners
+                                    <Button type="submit" GreenTheme > . . . .  </Button> // colocar spinners
                                     
                                 )
                                     :
