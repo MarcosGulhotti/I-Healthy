@@ -6,10 +6,14 @@ import { BiTimeFive } from 'react-icons/bi'
 import { RiLockPasswordLine,  } from 'react-icons/ri'
 import { HiOutlineMail } from 'react-icons/hi'
 import { Link } from "react-router-dom"
-import { yupResolver } from '@hookform/resolvers/yup'
 import { RegisterProfissional } from '../../Types/index'
+import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import { Button } from "../Button"
+import { api } from "../../Services/api"
+import { useState } from "react"
+import { useHistory } from "react-router-dom"
+import toast from "react-hot-toast"
 
 
 export const FormRegisterProfissional = () => {
@@ -37,9 +41,18 @@ export const FormRegisterProfissional = () => {
     const { register, handleSubmit, reset ,formState: {errors} } = useForm({
         resolver: yupResolver(formSchema)
     })
-  
-    const onSubmit = (data: RegisterProfissional) => {
+
+    const history = useHistory()
+    const [ loadind, setLoading ] = useState<boolean>(false)
+
+    const onSubmit = async (user: RegisterProfissional) => {
+        
+        setLoading(true)
+        const { data } = await api.post("/register", user)
+        setLoading(false)   
+        toast.success("Cadastro realizado com sucesso")
         console.log(data)
+       /*  history.push("/login") */ // ou dashboard
         reset()
     }
 

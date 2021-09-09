@@ -13,7 +13,7 @@ export interface ComponentButton {
   children: ReactNode;
   GreenTheme?: boolean;
   type?: string;
-  onClick?:(value: string) => void;
+  onClick?:() => void;
 }
 
 export interface SecondButtonProps {
@@ -56,4 +56,9 @@ export interface RegisterProfissional{
   demands: string;
   typeCalls: string;
   schedule:string;
+}
+
+export interface ILoginUser {
+  email: string;
+  password: string;
 }

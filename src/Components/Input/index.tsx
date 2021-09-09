@@ -23,7 +23,6 @@ export const Input = ({
           >
             {children}
           </select>
-          {!!error && console.log(error)}
         </>
       ) : (
         <>
@@ -34,7 +33,6 @@ export const Input = ({
             {...rest}
             type={type}
             />
-            {!!error && console.log(error)}
         </>
       )}
     </StyledContainer>
