@@ -2,10 +2,14 @@ import styled from "styled-components";
 
 export const StyledContainer = styled.div`
   display: flex;
+  align-items: center;
   margin: 0 auto;
   padding: 5px;
-  width: 350px;
+  margin-bottom: 10px;
+  /* width: 350px; */
+  width: 100%;
   border-bottom: 3px solid var(--Main-Black);
+
   i {
     font-size: 30px;
     margin-right: 1rem;
