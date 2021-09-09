@@ -6,7 +6,7 @@ interface IUserHeaderProps {
 
 const UserHeader = ({ isPacient = false }: IUserHeaderProps) => {
   return (
-    <Container>
+    <Container isPacient={isPacient}>
       <div>
         <figure>
           <img src={img} alt="userImage" />
