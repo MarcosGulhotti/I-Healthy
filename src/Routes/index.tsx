@@ -3,6 +3,8 @@ import ChoosePage from "../Pages/ChoosePage";
 import Home from "../Pages/Home";
 import PageRegister from "../Pages/PageRegister";
 import LoginPage from "../Pages/Login";
+import { Dashboard } from "../Pages/Dashboard";
+import PatientCalendar from "../Pages/PatientCalendar";
 
 const Router = () => {
   return (
@@ -25,7 +27,14 @@ const Router = () => {
       <Route path = "/login">
         <LoginPage/>
       </Route>
+  
+      <Route path = "/calendar">
+        <PatientCalendar/>
+      </Route>
 
+      <Route path="/dashboard">
+      <Dashboard/>
+    </Route>
       
     </Switch>
   );
