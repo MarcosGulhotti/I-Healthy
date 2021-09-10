@@ -11,7 +11,8 @@ function App() {
       <Toaster />
       <BrowserRouter>
         <GlobalStyle />
-        <Router />
+        {/* <Router /> */}
+        <UserHeader />
       </BrowserRouter>
     </>
   );
