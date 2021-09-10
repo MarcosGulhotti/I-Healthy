@@ -49,12 +49,17 @@ export const FormRegisterProfissional = () => {
     const onSubmit = async (user: RegisterProfissional) => {
         
         setLoading(true)
-        const { data } = await api.post("/register", {...user, isProfessional: true})
-        setLoading(false)   
-        toast.success("Cadastro realizado com sucesso")
-        console.log(data)
-        history.push("/login")  // ou dashboard
-        reset()
+        try{
+            reset()
+            const { data } = await api.post("/register", {...user, isProfessional: true})
+            toast.success("Cadastro realizado com sucesso")
+            setLoading(false)   
+            console.log(data)
+            history.push("/login")  // ou dashboard
+            
+        }catch{
+            setLoading(false)   
+        }
     }
 
     
