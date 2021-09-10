@@ -54,17 +54,21 @@ export const FormRegisterPaciente = () => {
 
   const onSubmit = async (user: RegisterPaciente) => {
     setLoading(true);
-    reset();
-    const { data } = await api.post("/register", {
-      ...user,
-      isProfessional: false,
-    });
-    console.log(data);
-    toast.success("Cadastro realizado com sucesso");
-    setLoading(false);
-    history.push("/login"); // ou dashboard
+    try {
+      reset();
+      const { data } = await api.post("/register", {
+        ...user,
+        isProfessional: false,
+      });
+      console.log(data);
+      toast.success("Cadastro realizado com sucesso");
+      history.push("/login"); // ou dashboard
+      setLoading(false);
+    } catch {
+      toast.error("Algo deu errado");
+      setLoading(false);
+    }
   };
-
   return (
     <Container>
       <form onSubmit={handleSubmit(onSubmit)}>

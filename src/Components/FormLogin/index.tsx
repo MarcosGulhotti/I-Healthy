@@ -34,11 +34,17 @@ export const FormLogin = () => {
 
     const onSubmit = async (user: ILoginUser) => {
         setLoading(true)
-        const { data } = await api.post("/login", user)
-        setLoading(false)
-        toast.success("Seja bem vindo")
-        console.log(data)
-       /*  history.push("/dashboard") */
+        try{
+            const { data } = await api.post("/login", user)
+            setLoading(false)
+            toast.success("Seja bem vindo")
+            console.log(data)
+            /*  history.push("/dashboard") */
+            
+        }catch{
+            toast.error("Senha ou email inválido")
+            setLoading(false)
+        }
         reset()
     }
 

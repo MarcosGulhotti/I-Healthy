@@ -7,6 +7,7 @@ export const Container = styled.div<{ isPacient: boolean }>`
   padding: 7px;
   color: var(--Main-White);
   background: var(--Main-Black);
+  width: 100%;
   > div {
     > figure {
       display: flex;
