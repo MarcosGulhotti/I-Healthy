@@ -55,3 +55,9 @@ export interface RegisterProfissional {
   typeCalls: string;
   schedule: string;
 }
+
+
+export interface ILoginUser {
+  email: string;
+  password: string;
+}

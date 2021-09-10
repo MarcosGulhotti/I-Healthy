@@ -2,6 +2,7 @@ import { Switch, Route } from "react-router-dom";
 import ChoosePage from "../Pages/ChoosePage";
 import Home from "../Pages/Home";
 import PageRegister from "../Pages/PageRegister";
+import LoginPage from "../Pages/Login";
 
 const Router = () => {
   return (
@@ -20,6 +21,12 @@ const Router = () => {
       <Route path="/choosePage">
         <ChoosePage />
       </Route>
+
+      <Route path = "/login">
+        <LoginPage/>
+      </Route>
+
+      
     </Switch>
   );
 };

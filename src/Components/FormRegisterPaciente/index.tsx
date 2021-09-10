@@ -9,7 +9,10 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import { Button } from "../Button"
 import { RegisterPaciente } from '../../Types/index'
-
+import { api} from '../../Services/api'
+import { useState } from "react"
+import { useHistory } from "react-router-dom"
+import toast from "react-hot-toast"
 
 export const FormRegisterPaciente = () => {
 
@@ -30,10 +33,18 @@ export const FormRegisterPaciente = () => {
     const { register, handleSubmit, reset ,formState: {errors} } = useForm({
         resolver: yupResolver(formSchema)
     })
+
+    const [loading, setLoading ] = useState<boolean>(false)
+    const history = useHistory() 
   
-    const onSubmit = (data: RegisterPaciente) => {
-        console.log(data)
+    const onSubmit = async (user: RegisterPaciente) => {
+        setLoading(true)
         reset()
+        const {data} = await api.post("/register",  {...user, isProfessional: false})
+        console.log(data)
+        toast.success("Cadastro realizado com sucesso")
+        setLoading(false) 
+        history.push("/login")   // ou dashboard
     }
     
     return(
@@ -115,7 +126,18 @@ export const FormRegisterPaciente = () => {
 
                     <div className="container-Buttons">
                         <div className="box-left">
-                            <Button type="submit" GreenTheme >Cadastrar-se</Button>
+                            {
+                                loading?
+                                (
+                                    <Button type="submit" GreenTheme > . . . .  </Button> // colocar spinners
+                                    
+                                )
+                                    :
+                                (
+                                    <Button type="submit" GreenTheme >Cadastrar-se</Button>
+
+                                )
+                            }
                         </div>
 
                         <p className="span-text"> Ou </p>
