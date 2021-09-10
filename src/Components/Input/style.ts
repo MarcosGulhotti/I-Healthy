@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { blackImage, redImage } from "../../Utils/CalendarImages";
+import img from "./../../Assets/Images/Date.svg";
 
 export const StyledContainer = styled.div<{ error: string }>`
   display: flex;
@@ -19,7 +21,8 @@ export const StyledContainer = styled.div<{ error: string }>`
     color: ${(prop) => (prop.error ? "#ff4500" : "#282830")};
   }
   input[type="date"]::-webkit-calendar-picker-indicator {
-    color: red;
+    background-image: ${(props) =>
+      `url(data:image/svg+xml,${props.error ? blackImage : redImage} )`};
     opacity: 1;
     width: 20px;
     height: 20px;
