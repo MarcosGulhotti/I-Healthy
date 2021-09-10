@@ -27,6 +27,7 @@ export const User = styled.div`
   flex-flow: column;
   align-items: center;
   justify-content: center;
+  font-family: var(--Font-Roboto-Mono);
   > h2 {
     font-size: 36px;
   }
@@ -47,9 +48,12 @@ export const User = styled.div`
     transform: scale(0.98);
     box-shadow: 9px 2px 32px 10px rgba(0, 0, 0, 0.24);
   }
-  @media (max-width: 350px) {
+  @media (max-width: 400px) {
     > button {
-      width: 100%;
+      width: 70%;
+    }
+    > h2 {
+      font-size: 25px;
     }
   }
 `;
@@ -58,12 +62,13 @@ export const Modal = styled.div<{ modal: boolean }>`
   top: 160px;
   left: 51%;
   padding: 30px;
-  background: var(--Main-Black);
+  background: var(--Second-Black);
+  font-family: var(--Font-Roboto-Mono);
   border-radius: 0 0.75rem;
   z-index: 10;
   transition: opacity 0.5s;
-  opacity: ${(props) => (props.modal ? "0" : "100")};
-  @media (max-width: 325px) {
-    left: 43%;
+  opacity: ${(props) => (props.modal ? "100" : "0")};
+  @media (max-width: 400px) {
+    left: 30%;
   }
 `;

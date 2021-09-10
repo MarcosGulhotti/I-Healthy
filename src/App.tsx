@@ -3,6 +3,7 @@ import Router from "./Routes";
 import GlobalStyle from "./Styles/global";
 import { Toaster } from "react-hot-toast";
 import { BrowserRouter } from "react-router-dom";
+import UserHeader from "./Components/UserHeader";
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       <Toaster />
       <BrowserRouter>
         <GlobalStyle />
-        <Router />
+        <UserHeader />
+        {/* <Router /> */}
       </BrowserRouter>
     </>
   );
