@@ -8,38 +8,9 @@ export const Container = styled.div`
     font-family: 'Saira';
 
     h1{
-        margin: 10px 0;
+        margin: 20px 0;
     }
 
-    .box{
-        display: flex;
-        justify-content: space-between;
-        background: var(--Main-Black);
-        width: 100%;
-        height: 12%;
-        padding: 5px 0;
-        color: var(--Main-White);
-        font-family: 'Roboto Mono';
-    }
-
-    
-    .box-img {
-        width: 100px;
-        border: 1px solid var(--Main-White);
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        margin-left: 15px;
-    }
-    
-    .box-img img{
-        width: 90%;
-        height: 90%;
-        margin-left: 15px;
-    }
-
-    .box-data{
-        width: 50%;
 
         p{
             font-size: 1.1rem;
@@ -56,16 +27,10 @@ export const Container = styled.div`
             border-radius: 0.5rem 0;
             margin-bottom: 10px;
         }
-    }
 `
 
 export const BoxCalendar = styled.div`
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
+  
     background: var(--Main-Black);
     height: 50%;
     width: 100%;
