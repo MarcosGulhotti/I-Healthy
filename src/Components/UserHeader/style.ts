@@ -59,6 +59,7 @@ export const User = styled.div`
   }
 `;
 export const Modal = styled.div<{ modal: boolean }>`
+  display: none;
   position: absolute;
   top: 160px;
   left: 51%;
