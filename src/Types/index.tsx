@@ -56,8 +56,20 @@ export interface RegisterProfissional {
   schedule: string;
 }
 
-
 export interface ILoginUser {
   email: string;
   password: string;
+}
+
+export interface IUserHeaderProps {
+  isPacient?: boolean;
+}
+export interface IuserData {
+  id: number;
+  name: string;
+  cpf: string;
+  gender: string;
+  adress: string;
+  events: [];
+  isProfessional: boolean;
 }
