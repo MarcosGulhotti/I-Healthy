@@ -11,7 +11,6 @@ import { Container } from './style'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import toast from 'react-hot-toast'
-import BeatLoader from "react-spinners/BeatLoader";
 
 export const FormLogin = () => {
 
@@ -37,9 +36,10 @@ export const FormLogin = () => {
         try{
             const { data } = await api.post("/login", user)
             setLoading(false)
+            localStorage.setItem("@Kenzie:id", data.user.id)
             toast.success("Seja bem vindo")
             console.log(data)
-            /*  history.push("/dashboard") */
+            history.push("/dashboard")
             
         }catch{
             toast.error("Senha ou email inválido")

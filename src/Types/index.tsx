@@ -70,6 +70,8 @@ export interface IuserData {
   cpf: string;
   gender: string;
   adress: string;
+  specialty: string;
+  patients:[];
   events: [];
   isProfessional: boolean;
 }
