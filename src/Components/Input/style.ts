@@ -15,6 +15,15 @@ export const StyledContainer = styled.div<{ error: string }>`
     margin-right: 1rem;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
+  svg {
+    color: ${(prop) => (prop.error ? "#ff4500" : "#282830")};
+  }
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    color: red;
+    opacity: 1;
+    width: 20px;
+    height: 20px;
+  }
   select,
   input {
     flex: 1;
@@ -22,10 +31,13 @@ export const StyledContainer = styled.div<{ error: string }>`
     border: none;
     background: transparent;
     font-family: var(--Font-Saira);
-    color: var(--Second-Black);
+    color: ${(prop) => (prop.error ? "#ff4500" : "#282830")};
     font-size: 1rem;
     font-weight: bold;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  input::placeholder {
+    color: ${(prop) => (prop.error ? "#ff4500" : "#282830")};
   }
   option {
     font-family: var(--Font-Saira);

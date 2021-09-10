@@ -43,4 +43,24 @@ export const User = styled.div`
     border: none;
     border-radius: 0.75rem 0;
   }
+  button:active {
+    transform: scale(0.98);
+    box-shadow: 9px 2px 32px 10px rgba(0, 0, 0, 0.24);
+  }
+  @media (max-width: 350px) {
+    > button {
+      width: 100%;
+    }
+  }
+`;
+export const Modal = styled.div<{ modal: boolean }>`
+  position: absolute;
+  top: 160px;
+  left: 40%;
+  padding: 30px;
+  background: var(--Main-Black);
+  border-radius: 0 0.75rem;
+  z-index: 10;
+  transition: opacity 0.5s;
+  opacity: ${(props) => (props.modal ? "0" : "100")};
 `;
