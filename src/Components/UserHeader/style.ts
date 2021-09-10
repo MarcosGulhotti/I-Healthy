@@ -56,11 +56,14 @@ export const User = styled.div`
 export const Modal = styled.div<{ modal: boolean }>`
   position: absolute;
   top: 160px;
-  left: 40%;
+  left: 51%;
   padding: 30px;
   background: var(--Main-Black);
   border-radius: 0 0.75rem;
   z-index: 10;
   transition: opacity 0.5s;
   opacity: ${(props) => (props.modal ? "0" : "100")};
+  @media (max-width: 325px) {
+    left: 43%;
+  }
 `;
