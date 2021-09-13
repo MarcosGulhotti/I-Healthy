@@ -1,5 +1,5 @@
 import { PButton, PContainer, Title } from "./style";
-import { useUSer } from "../../Providers/User";
+import { useUser } from "../../Providers/User";
 import { useEffect, useState } from "react";
 import { api } from "../../Services/api";
 

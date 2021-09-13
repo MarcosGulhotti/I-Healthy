@@ -30,4 +30,4 @@ export const UserProvider = ({ children }: ProviderChildren) => {
   );
 };
 
-export const useUSer = () => useContext(UserContext);
+export const useUser = () => useContext(UserContext);
