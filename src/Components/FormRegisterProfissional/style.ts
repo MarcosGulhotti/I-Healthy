@@ -1,54 +1,58 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    
-   margin-top: 25px;
-   position: relative; 
-   max-height: 450px;
-                        
-    form{
-        margin: 0 auto;
-        padding: 0 1rem;
-        width: 80%;
+  margin-top: 25px;
+  position: relative;
+  max-height: 450px;
+
+  form {
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: 80%;
+  }
+
+  .container-inputs {
+    overflow: auto;
+    max-height: 350px;
+  }
+
+  .link {
+    text-align: right;
+  }
+
+  svg {
+    margin-right: 5px;
+  }
+
+  input {
+    margin: 5px 0px;
+  }
+
+  .container-Buttons {
+    margin: 8px 0px;
+
+    .box-right {
+      text-align: center;
+      margin-left: 8rem;
     }
-    
-    .container-inputs{
-        overflow: auto;
-        max-height: 350px;
+    .box-left {
+      text-align: center;
+      margin-right: 8rem;
     }
 
-    .link{
-        text-align: right;
+    p {
+      text-align: center;
+      margin: 5px 0px;
+      font-size: 1.2rem;
+      font-weight: bold;
     }
 
-    svg{
-        margin-right: 5px;
+    button {
+      height: 35px;
+      width: 125px;
+      font-size: 1.1rem;
+      font-family: "saira";
+      border-radius: 5px;
     }
-
-    input{
-        margin: 5px 0px;
-    }
-
-    .container-Buttons{
-        margin: 8px 0px;
-
-        .box-right{
-            text-align: right;
-        }
-        p{
-            text-align: center;
-            margin: 5px 0px;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-
-        button{
-            height:35px;
-            width: 125px;
-            font-size: 1.1rem;
-            font-family: "saira";
-            border-radius: 5px;
-        }
-        
-    }
-`; 
+  }
+`;
