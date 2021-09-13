@@ -1,48 +1,45 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    position: relative;
+  position: relative;
 
-    form{
-        margin: 0 auto;
-        margin-top: 20px;
-        padding: 0 1rem;
-        width: 85%;
+  form {
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 0 1rem;
+    width: 85%;
+  }
+
+  .link {
+    text-align: right;
+  }
+
+  svg {
+    margin-right: 5px;
+  }
+
+  input {
+    margin: 5px 0px;
+  }
+  .container-Buttons {
+    margin: 8px 0px;
+
+    .box-right {
+      text-align: center;
+      margin-left: 6rem;
     }
-
-
-    .link{
-        text-align: right;
+    .box-left {
+      text-align: center;
+      margin-right: 6rem;
     }
-
-    svg{
-        margin-right: 5px;
+    p {
+      text-align: center;
+      margin: 10px 0px;
+      font-size: 1.2rem;
+      font-weight: bold;
     }
-
-    input{
-        margin: 5px 0px;
-    }
-
-    .container-Buttons{
-        margin: 8px 0px;
-
-        .box-right{
-            text-align: right;
-        }
-        p{
-            text-align: center;
-            margin: 5px 0px;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-
-        button{
-            height:35px;
-            width: 125px;
-            font-size: 1.1rem;
-            font-family: "saira";
-            border-radius: 5px;
-        }
-        
-    }
-`
+  }
+  p.link{
+    margin-bottom: 50px;
+  }
+`;

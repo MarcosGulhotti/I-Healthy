@@ -26,8 +26,14 @@ export const Container = styled.div`
     margin: 8px 0px;
 
     .box-right {
-      text-align: right;
+      text-align: center;
+      margin-left: 8rem;
     }
+    .box-left {
+      text-align: center;
+      margin-right: 8rem;
+    }
+
     p {
       text-align: center;
       margin: 5px 0px;
