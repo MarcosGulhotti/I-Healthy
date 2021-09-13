@@ -15,81 +15,112 @@ const PageSearch = () => {
     const [modal2, setModal2] = useState<boolean>(false)
     const [modal3, setModal3] = useState<boolean>(false)
 
-    const [users, setusers] = useState<IUserSearch[]>([])
-    
+    const [users, setUsers] = useState<IUserSearch[]>([])
     const history = useHistory()
 
     const toSchedule = async (doctor: object) => {
         setLoading(true)
-        console.log(doctor)
         history.push("/DoctorCalendar", doctor)
     }
 
     const getUsers = async () => {
-        const { data } = await api.get("/users?_limit=3")
+        const { data } = await api.get("/users/?isProfessional=true")
         setLoad(false)
-        setusers(data)
+        setUsers(data)
     }
     
     useEffect(() => {
         getUsers()
     }, [])
     
-    useEffect(() => {
-    }, [users])
-    
-    
     const search = async (type: string, name: string, setModal: (bol: boolean) => void) => {
         setModal(false)
-        setLoad(true)
-        const { data } = await api.get(`/users?=${type}=${name}`)
-        setusers(data)
-        setLoad(false)
-        console.log((`/users?=${type}=${name}`))
+
+        if(type==="gender"){
+            const  newList = users.filter((user) => user.gender === name)
+            setUsers(newList)
+        }
+        
+        if(type==="typeCalls"){
+            const  newList = users.filter((user) => user.typeCalls === name)
+            setUsers(newList)
+        }
+        
+        if(type==="specialty"){
+            const  newList = users.filter((user) => user.specialty === name)
+            setUsers(newList)
+        } 
+       
     }
 
     return (
         <Container>
             <Header>
 
-                <button onClick={() => setModal1(!modal1)}>
+                <button onClick={() => {
+                     getUsers()
+                     setModal1(!modal1)
+                     }}>
                     Gênero
 
                     {modal1 && 
                     (
-                    <Modal modal={modal1}>
-                        <button onClick={() => search("gender" ,"M", setModal1)}>Masculino</button>
-                        <button onClick={() => search("gender","F", setModal1)}>Feminino</button>
-                        <button onClick={() => search("gender", "Outros", setModal1)}>Outros</button>
-                    </Modal>
+                        <div className="modal-left">
+                            <Modal modal={modal1}>
+                                <button onClick={() => search("gender" ,"Masculino", setModal1)}>Masculino</button>
+                                <button onClick={() => search("gender","Feminino", setModal1)}>Feminino</button>
+                                <button onClick={() => search("gender", "Outros", setModal1)}>Outros</button>
+                            </Modal>
+                        </div>
                     )
                     }
 
                 </button>
 
-                <button onClick={() => setModal2(!modal2)}>
+                <button onClick={() =>{
+                    getUsers()
+                    setModal2(!modal2)
+                    }}>
                     Atendimento
 
                     {modal2 && 
                     (
-                    <Modal modal={modal2}>
-                        <button onClick={() => search("typeCalls" ,"Online", setModal2)}>Online</button>
-                        <button onClick={() => search("typeCalls" ,"Presecial", setModal2)}>Presencial</button>
-                    </Modal>
+                        <Modal modal={modal2}>
+                            <button onClick={() => search("typeCalls" ,"Online", setModal2)}>Online</button>
+                            <button onClick={() => search("typeCalls" ,"Presencial", setModal2)}>Presencial</button>
+                            <button onClick={() => search("typeCalls" ,"Ambos", setModal2)}>Ambos</button>
+                        </Modal>
                     )
                     }
                   
                 </button>
 
-                <button onClick={() => setModal3(!modal3)}>
+                <button onClick={() => {
+                    getUsers()
+                    setModal3(!modal3)
+                    }}>
                     Especialidade
                     {modal3 && 
                     (
-                    <Modal modal={modal3}>
-                        <button onClick={() => search("specialty" ,"Psicólogo", setModal3)}>Psicólogo</button>
-                        <button onClick={() => search("specialty" ,"Psiquiatra", setModal3)}>Psiquiatra</button>
-                        <button onClick={() => search("specialty" ,"Neurocirurgião", setModal3)}>Neurocirurgião</button>
-                    </Modal>
+                    
+                    <div className="modal-right">
+                        <Modal modal={modal3}>
+                            <button onClick={() => search("specialty" ,"Psicólogo", setModal3)}>Psicólogo</button>
+                            <button onClick={() => search("specialty" ,"Psiquiatria", setModal3)}>Psiquiatra</button>
+                            <button onClick={() => search("specialty" ,"Neurocirurgião", setModal3)}>Neurocirurgião</button>
+                            <button onClick={() => search("specialty" ,"Oftalmologia", setModal3)}>Oftalmologia</button>
+                            <button onClick={() => search("specialty" ,"Cardiologia", setModal3)}>Cardiologia</button>
+                            <button onClick={() => search("specialty" ,"Radiologia", setModal3)}>Radiologia</button>
+                            <button onClick={() => search("specialty" ,"Dermatologia", setModal3)}>Dermatologia</button>
+                            <button onClick={() => search("specialty" ,"Otorrinolaringologia", setModal3)}>Otorrinolari..</button>
+                            <button onClick={() => search("specialty" ,"Cirurgia geral", setModal3)}>Cirurgia geral</button>
+                            <button onClick={() => search("specialty" ,"Pediatria", setModal3)}>Pediatria</button>
+                            <button onClick={() => search("specialty" ,"Ortopedia e Traumatologia", setModal3)}>Ortopedia e Traumatologia</button>
+                            <button onClick={() => search("specialty" ,"Nefrologia", setModal3)}>Nefrologia</button>
+                            <button onClick={() => search("specialty" ,"Outro", setModal3)}>Outro</button>
+
+                        </Modal>
+                    </div>
                     )
                     }
                     
@@ -99,20 +130,22 @@ const PageSearch = () => {
 
              <BoxSearch>
                  {load?
-                 (
-                     <BounceLoader color="#37DB7F" size="100px"/>
+                 (  
+                     <>
+                        <BounceLoader color="#37DB7F" size="100px"/>
+                     </>
+                     
                  )
                  :
                  (
                      <>
-
                     {users.map((user) => {
                         return <CardUser
                             key={user.id}
-                            name={user.name ? user.name.split(" ")[0] : "Nome"}
-                            genre={user.genre ? user.genre : "Gênero"} 
+                            username={user.username}
+                            gender={user.gender} 
                             specialty={user.specialty}
-                            city={user.city ? user.city: "Cidade"}
+                            typeCalls={user.typeCalls}
                             func={() => toSchedule(user)}
                             loading={loading}
                         />
