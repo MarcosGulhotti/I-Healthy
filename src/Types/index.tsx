@@ -65,8 +65,8 @@ export interface IUserHeaderProps {
   isPacient?: boolean;
 }
 export interface IuserData {
+  username: string;
   id: number;
-  name: string;
   cpf: string;
   gender: string;
   adress: string;

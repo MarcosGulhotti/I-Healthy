@@ -18,13 +18,13 @@ const UserHeader = ({ isPacient = false }: IUserHeaderProps) => {
       </div>
       {isPacient ? (
         <User>
-          <h2>{user?.name}</h2>
+          <h2>{user?.username}</h2>
           <p>usuário</p>
           <button onClick={handleModal}> Ver mais </button>
         </User>
       ) : (
         <User>
-          <h2>{user?.name}</h2>
+          <h2>{user?.username}</h2>
           <p>{user?.specialty}</p>
           <button onClick={handleModal}> Ver mais </button>
         </User>

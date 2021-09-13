@@ -1,4 +1,4 @@
-import { Calendar } from '../../Components/Calendar'
+import { UserCalendar } from '../../Components/UserCalendar'
 import { BoxCalendar, Container} from './style'
 import { Menu } from '../../Components/Menu'
 import Header from '../../Components/UserHeader'
@@ -11,7 +11,7 @@ const PatientCalendar = () => {
             <h1>Agenda de consultas</h1>
 
             <BoxCalendar>
-                <Calendar/>
+                <UserCalendar/>
             </BoxCalendar>
             
             <Menu/>
