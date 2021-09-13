@@ -66,7 +66,6 @@ export const FormRegisterPaciente = () => {
         ...user,
         isProfessional: false,
       });
-      console.log(data);
       toast.success("Cadastro realizado com sucesso");
       history.push("/login"); // ou dashboard
       setLoading(false);
@@ -169,7 +168,7 @@ export const FormRegisterPaciente = () => {
           <p className="span-text"> Ou </p>
 
           <div className="box-right">
-            <Button>Voltar</Button>
+            <Button onClick={() => history.push("/")} >Voltar</Button>
           </div>
         </div>
       </form>

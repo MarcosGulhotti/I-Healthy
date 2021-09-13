@@ -5,6 +5,7 @@ import PageRegister from "../Pages/PageRegister";
 import LoginPage from "../Pages/Login";
 import { Dashboard } from "../Pages/Dashboard";
 import PatientCalendar from "../Pages/PatientCalendar";
+import SearchPage from '../Pages/Search'
 
 const Router = () => {
   return (
@@ -33,9 +34,14 @@ const Router = () => {
       </Route>
 
       <Route path="/dashboard">
-      <Dashboard/>
-    </Route>
+        <Dashboard/>
+      </Route>
+
+      <Route path="/search">
+        <SearchPage/>
+      </Route>
       
+
     </Switch>
   );
 };
