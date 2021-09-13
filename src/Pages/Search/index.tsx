@@ -53,10 +53,10 @@ const PageSearch = () => {
                     {users.map((user) => {
                         return <CardUser
                             key={user.id}
-                            name={user.name ? user.name : "Não Informado"}
-                            genre={user.genre ? user.genre : "Não Informado"} 
+                            name={user.name ? user.name.split(" ")[0] : "Nome"}
+                            genre={user.genre ? user.genre : "Gênero"} 
                             specialty={user.specialty}
-                            city="manaus-am"
+                            city={user.city ? user.city: "Cidade"}
                             func={toSchedule}
                             loading={loading}
                         />

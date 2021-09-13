@@ -3,7 +3,8 @@ import User from '../../Assets/Images/User.svg'
 
 export const Container = styled.div`
     width: 85%;
-    height: 200px;
+    height: 225px;
+    overflow: auto;
     border-radius: 1rem 0;
     background: var(--Main-Gray);
     color: var(--Main-White);
