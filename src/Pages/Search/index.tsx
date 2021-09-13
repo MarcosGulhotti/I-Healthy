@@ -61,7 +61,6 @@ const PageSearch = () => {
             <Header>
 
                 <button onClick={() => {
-                    // getUsers()
                      setModal1(!modal1)
                      }}>
                     Gênero
@@ -81,7 +80,6 @@ const PageSearch = () => {
                 </button>
 
                 <button onClick={() =>{
-                  //  getUsers()
                     setModal2(!modal2)
                     }}>
                     Atendimento
@@ -99,7 +97,6 @@ const PageSearch = () => {
                 </button>
 
                 <button onClick={() => {
-                    //getUsers()
                     setModal3(!modal3)
                     }}>
                     Especialidade
