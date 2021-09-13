@@ -65,6 +65,7 @@ export const FormRegisterPaciente = () => {
       const { data } = await api.post("/register", {
         ...user,
         isProfessional: false,
+        events: [],
       });
       toast.success("Cadastro realizado com sucesso");
       history.push("/login"); // ou dashboard
@@ -168,7 +169,7 @@ export const FormRegisterPaciente = () => {
           <p className="span-text"> Ou </p>
 
           <div className="box-right">
-            <Button onClick={() => history.push("/")} >Voltar</Button>
+            <Button onClick={() => history.push("/")}>Voltar</Button>
           </div>
         </div>
       </form>

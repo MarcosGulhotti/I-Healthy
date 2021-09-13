@@ -8,6 +8,7 @@ import { IUserHeaderProps, IuserData } from "../../Types";
 
 const UserHeader = ({ isPacient = false }: IUserHeaderProps) => {
   const [modal, setModal] = useState<boolean>(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [id, setId] = useState<number>(() => {
     const data = localStorage.getItem("@Kenzie:id");
     if (data) {
@@ -37,13 +38,13 @@ const UserHeader = ({ isPacient = false }: IUserHeaderProps) => {
       </div>
       {isPacient ? (
         <User>
-          <h2>{user?.name}</h2>
+          <h2>{user?.username}</h2>
           <p>usuário</p>
           <button onClick={handleModal}> Ver mais </button>
         </User>
       ) : (
         <User>
-          <h2>{user?.name}</h2>
+          <h2>{user?.username}</h2>
           <p>{user?.specialty}</p>
           <button onClick={handleModal}> Ver mais </button>
         </User>
