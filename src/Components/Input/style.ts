@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { blackImage, redImage } from "../../Utils/CalendarImages";
-import img from "./../../Assets/Images/Date.svg";
 
 export const StyledContainer = styled.div<{ error: string }>`
   display: flex;
@@ -39,10 +38,14 @@ export const StyledContainer = styled.div<{ error: string }>`
     font-weight: bold;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
+  select {
+    border: none;
+  }
   input::placeholder {
     color: ${(prop) => (prop.error ? "#ff4500" : "#282830")};
   }
   option {
+    border: none;
     font-family: var(--Font-Saira);
     background: transparent;
     color: var(--Second-Black);
