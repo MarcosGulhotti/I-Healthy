@@ -21,6 +21,9 @@ const UserHeader = ({ isPacient = false }: IUserHeaderProps) => {
     try {
       const { data } = await api.get(`/users?id=${id}`);
       setUser(data[0]);
+      if (!data) {
+        throw Error;
+      }
     } catch {
       toast.error("algo deu errado");
     }
