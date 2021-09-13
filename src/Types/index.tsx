@@ -71,7 +71,7 @@ export interface IuserData {
   gender: string;
   adress: string;
   specialty: string;
-  patients:[];
+  patients: [];
   events: [];
   isProfessional: boolean;
 }
@@ -83,5 +83,9 @@ export interface IUserSearch {
   genre: string;
   city: string;
   loading: boolean;
-  func: () => void
+  func: () => void;
+}
+
+export interface UserProviderData {
+  user: IuserData;
 }

@@ -1,33 +1,14 @@
 import { Container, Modal, User } from "./style";
 import img from "./../../Assets/Images/User.svg";
-import { api } from "../../Services/api";
-import toast from "react-hot-toast";
-import { useEffect } from "react";
 import { useState } from "react";
-import { IUserHeaderProps, IuserData } from "../../Types";
+import { IUserHeaderProps } from "../../Types";
+import { useUSer } from "../../Providers/User";
 
 const UserHeader = ({ isPacient = false }: IUserHeaderProps) => {
   const [modal, setModal] = useState<boolean>(false);
-  const [id, setId] = useState<number>(() => {
-    const data = localStorage.getItem("@Kenzie:id");
-    if (data) {
-      return JSON.parse(data);
-    }
-    return 0;
-  });
-  const [user, setUser] = useState<IuserData>({} as IuserData);
   const handleModal = () => setModal(!modal);
-  const getUser = async (id: number) => {
-    try {
-      const { data } = await api.get(`/users?id=${id}`);
-      setUser(data[0]);
-    } catch {
-      toast.error("algo deu errado");
-    }
-  };
-  useEffect(() => {
-    getUser(id);
-  }, [id]);
+  const { user } = useUSer();
+
   return (
     <Container isPacient={isPacient}>
       <div>
