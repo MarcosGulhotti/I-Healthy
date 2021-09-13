@@ -7,6 +7,7 @@ const UserContext = createContext<UserProviderData>({} as UserProviderData);
 
 export const UserProvider = ({ children }: ProviderChildren) => {
   const [user, setUser] = useState<IuserData>({} as IuserData);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [id, setId] = useState<number>(() => {
     const data = localStorage.getItem("@Kenzie:id");
     if (data) {
@@ -33,4 +34,4 @@ export const UserProvider = ({ children }: ProviderChildren) => {
   );
 };
 
-export const useUSer = () => useContext(UserContext);
+export const useUser = () => useContext(UserContext);

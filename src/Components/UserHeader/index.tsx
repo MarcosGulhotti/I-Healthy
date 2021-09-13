@@ -2,12 +2,12 @@ import { Container, Modal, User } from "./style";
 import img from "./../../Assets/Images/User.svg";
 import { useState } from "react";
 import { IUserHeaderProps } from "../../Types";
-import { useUSer } from "../../Providers/User";
+import { useUser } from "../../Providers/User";
 
 const UserHeader = ({ isPacient = false }: IUserHeaderProps) => {
   const [modal, setModal] = useState<boolean>(false);
   const handleModal = () => setModal(!modal);
-  const { user } = useUSer();
+  const { user } = useUser();
 
   return (
     <Container isPacient={isPacient}>
