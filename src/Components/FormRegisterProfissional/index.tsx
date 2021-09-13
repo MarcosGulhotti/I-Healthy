@@ -51,7 +51,7 @@ export const FormRegisterProfissional = () => {
         setLoading(true)
         try{
             reset()
-            const { data } = await api.post("/register", {...user, isProfessional: true})
+            const { data } = await api.post("/register", {...user, events: [], isProfessional: true})
             toast.success("Cadastro realizado com sucesso")
             setLoading(false)   
             console.log(data)

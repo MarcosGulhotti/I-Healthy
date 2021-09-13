@@ -41,7 +41,7 @@ export const FormRegisterPaciente = () => {
         setLoading(true)
         try{
             reset()
-            const {data} = await api.post("/register",  {...user, isProfessional: false})
+            const {data} = await api.post("/register",  {...user, events: [], isProfessional: false})
             console.log(data)
             toast.success("Cadastro realizado com sucesso")
             history.push("/login")   // ou dashboard
