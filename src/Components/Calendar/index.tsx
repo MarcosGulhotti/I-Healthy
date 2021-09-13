@@ -2,6 +2,7 @@ import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import { useState } from "react";
+import { StyledCalendar } from "./style";
 
 export const Calendar = () => {
   const [events, setEvents] = useState([
@@ -14,7 +15,7 @@ export const Calendar = () => {
   };
 
   return (
-    <>
+    <StyledCalendar>
       <FullCalendar
         plugins={[dayGridPlugin, interactionPlugin]}
         initialView="dayGridMonth"
@@ -24,6 +25,6 @@ export const Calendar = () => {
           handleDateClick(info.dateStr);
         }}
       />
-    </>
+    </StyledCalendar>
   );
 };
