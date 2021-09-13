@@ -65,13 +65,13 @@ export interface IUserHeaderProps {
   isPacient?: boolean;
 }
 export interface IuserData {
+  username: string;
   id: number;
-  name: string;
   cpf: string;
   gender: string;
   adress: string;
   specialty: string;
-  patients:[];
+  patients: [];
   events: [];
   isProfessional: boolean;
 }
@@ -83,5 +83,5 @@ export interface IUserSearch {
   genre: string;
   city: string;
   loading: boolean;
-  func: () => void
+  func: () => void;
 }

@@ -33,7 +33,7 @@ export const StyledCalendar = styled.div`
   .fc-toolbar-title {
     font-size: 1.5rem;
   }
-  .fc-today-button {
+  .fc-today-button:enabled {
     width: 35px;
     height: 25px;
     padding: 0;
@@ -43,6 +43,11 @@ export const StyledCalendar = styled.div`
   }
   .fc-today-button:disabled {
     background-color: var(--Main-Black);
+    width: 35px;
+    height: 25px;
+    padding: 0;
+    font-size: 0.7rem;
+    font-weight: bold;
   }
   .fc-button-group {
     gap: 2px;
