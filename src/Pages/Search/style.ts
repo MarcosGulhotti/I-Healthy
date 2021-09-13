@@ -37,14 +37,35 @@ export const Header = styled.div`
         color: var(--Main-White);
         font-size: 18px;
     }
+
+    .modal-left{
+        position: relative;
+        left: 40px;
+        top: -40px;
+    }
+
+    .modal-right{
+        position: relative;
+        right: 10px;
+        top: -40px;
+    }
 `
 
 
 export const Modal = styled.div<{ modal: boolean }>`
+  
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   position: absolute;
-  top: 160px;
-  left: 51%;
-  padding: 30px;
+  width: 160px;
+  height: 140px;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px;
   background: var(--Second-Black);
   font-family: var(--Font-Roboto-Mono);
   border-radius: 0 0.75rem;
@@ -53,4 +74,17 @@ export const Modal = styled.div<{ modal: boolean }>`
   opacity: ${(props) => (props.modal ? "100" : "0")};
   opacity: ${(props) => (props.modal ? "100" : "0")};
  
+
+  button{
+      border: 1px solid;
+      width: 80%;
+      margin: 5px 0;
+      border-radius: 15px;
+      background: var(--Main-Purple);
+  }
+
+  button:nth-child(2n) {
+    background: var(--Main-Green);
+  }
+
 `;

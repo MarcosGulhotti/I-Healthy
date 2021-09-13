@@ -42,7 +42,7 @@ export const FormRegisterPaciente = () => {
       .string()
       .required("CPF obrigatório")
       .matches(/^\d{3}\.\d{3}\.\d{3}\-\d{2}$/, "CPF invalido"),
-    genre: yup.string().required("Gênero obrigatório"),
+    gender: yup.string().required("Gênero obrigatório"),
     address: yup.string().required("Endereço obigatório"),
   });
 
@@ -126,9 +126,9 @@ export const FormRegisterPaciente = () => {
         <Input
           icon={<FaTransgender />}
           type="text"
-          name="genre"
+          name="gender"
           register={register}
-          error={errors.genre?.message}
+          error={errors.gender?.message}
           placeholder="Seu gênero"
           IsSelect
         >

@@ -2,7 +2,7 @@ import { Container } from './style'
 import { IUserSearch } from '../../Types'
 import BeatLoader from 'react-spinners/BeatLoader'
 
-export const CardUser = ({name, specialty, genre, city, loading=false, func}: IUserSearch) => {
+export const CardUser = ({username, specialty, gender, typeCalls, loading=false, func}: IUserSearch) => {
     
     return(
         <Container>
@@ -12,10 +12,10 @@ export const CardUser = ({name, specialty, genre, city, loading=false, func}: IU
                 </div>
                 
                 <div className="box box-content">
-                    <h2>{name}</h2>
-                    <p>{genre}</p>
+                    <h2>{username}</h2>
+                    <p>{gender}</p>
                     <p>{specialty}</p>
-                    <p>{city}</p>
+                    <p>{typeCalls}</p>
                 </div>
             </div>
 

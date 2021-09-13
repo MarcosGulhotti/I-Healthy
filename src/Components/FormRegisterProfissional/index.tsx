@@ -41,7 +41,7 @@ export const FormRegisterProfissional = () => {
       ),
     date: yup.date().required("Data obrigatório"),
     cpf: yup.string().required("CPF obrigatório"),
-    genre: yup.string().required("Gênero obrigatório"),
+    gender: yup.string().required("Gênero obrigatório"),
     address: yup.string().required("Endereço obigatório"),
     register: yup.string().required("Registro obrigatório"),
     specialty: yup.string().required("Especialidade Obrigatória"),
@@ -132,9 +132,9 @@ export const FormRegisterProfissional = () => {
           <Input
             icon={<FaTransgender />}
             type="text"
-            name="genre"
+            name="gender"
             register={register}
-            error={errors.genre?.message}
+            error={errors.gender?.message}
             placeholder="Seu gênero"
             IsSelect
           >

@@ -74,10 +74,10 @@ export interface IuserData {
 
 export interface IUserSearch {
   id?: number;
-  name: string;
+  username: string;
   specialty: string;
-  genre: string;
-  city: string;
+  gender: string;
+  typeCalls: string;
   loading: boolean;
   func: () => void;
 }
