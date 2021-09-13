@@ -85,3 +85,8 @@ export interface IUserSearch {
 export interface UserProviderData {
   user: IuserData;
 }
+
+export interface AuthProviderData {
+  isAuth: string;
+  setIsAuth: (value: string) => void;
+}
