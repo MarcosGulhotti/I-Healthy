@@ -35,7 +35,10 @@ const PageSearch = () => {
     
     const search = async (type: string, name: string, setModal: (bol: boolean) => void) => {
         setModal(false)
-
+        
+        const {data} = await api.get(`/users/?${type}=${name}`)
+        setUsers(data)
+/* 
         if(type==="gender"){
             const  newList = users.filter((user) => user.gender === name)
             setUsers(newList)
@@ -49,7 +52,7 @@ const PageSearch = () => {
         if(type==="specialty"){
             const  newList = users.filter((user) => user.specialty === name)
             setUsers(newList)
-        } 
+        }  */
        
     }
 
@@ -58,7 +61,6 @@ const PageSearch = () => {
             <Header>
 
                 <button onClick={() => {
-                     getUsers()
                      setModal1(!modal1)
                      }}>
                     Gênero
@@ -78,7 +80,6 @@ const PageSearch = () => {
                 </button>
 
                 <button onClick={() =>{
-                    getUsers()
                     setModal2(!modal2)
                     }}>
                     Atendimento
@@ -96,7 +97,6 @@ const PageSearch = () => {
                 </button>
 
                 <button onClick={() => {
-                    getUsers()
                     setModal3(!modal3)
                     }}>
                     Especialidade
@@ -150,7 +150,7 @@ const PageSearch = () => {
                             loading={loading}
                         />
                     } )}
-
+                        <button onClick={() => getUsers()}>resetar</button>
                     </>
                  )}
                
