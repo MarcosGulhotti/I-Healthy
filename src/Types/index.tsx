@@ -60,10 +60,6 @@ export interface ILoginUser {
   email: string;
   password: string;
 }
-
-export interface IUserHeaderProps {
-  isPacient?: boolean;
-}
 export interface IuserData {
   username: string;
   id: number;
@@ -84,4 +80,8 @@ export interface IUserSearch {
   typeCalls: string;
   loading: boolean;
   func: () => void;
+}
+
+export interface UserProviderData {
+  user: IuserData;
 }

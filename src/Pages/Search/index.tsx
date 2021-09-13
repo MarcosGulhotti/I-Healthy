@@ -1,11 +1,11 @@
-import { Container, BoxSearch, Header, Modal } from './style'
-import { CardUser } from '../../Components/CardUser'
-import { useEffect, useState } from 'react'
-import { api } from '../../Services/api'
-import { IUserSearch} from '../../Types'
-import BounceLoader from 'react-spinners/BounceLoader'
-import { Menu } from '../../Components/Menu'
-import { useHistory } from 'react-router'
+import { Container, BoxSearch, Header, Modal } from "./style";
+import { CardUser } from "../../Components/CardUser";
+import { useEffect, useState } from "react";
+import { api } from "../../Services/api";
+import { IUserSearch } from "../../Types";
+import BounceLoader from "react-spinners/BounceLoader";
+import { Menu } from "../../Components/Menu";
+import { useHistory } from "react-router";
 
 const PageSearch = () => {
 

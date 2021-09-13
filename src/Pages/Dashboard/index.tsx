@@ -1,5 +1,5 @@
 import { Menu } from "../../Components/Menu"
-import { ProDashboard } from "../../Components/ProDash"
+import { ProDashboard } from "../../Components/ProfessionalDashboard"
 import UserHeader from "../../Components/UserHeader"
 import { Container } from "./style"
 
