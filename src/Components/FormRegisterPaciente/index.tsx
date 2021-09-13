@@ -22,11 +22,14 @@ import toast from "react-hot-toast";
 
 export const FormRegisterPaciente = () => {
   const formSchema = yup.object().shape({
-    username: yup.string().required("nome obrigatório"),
+    username: yup
+      .string()
+      .required("Nome obrigatório")
+      .max(16, "Maximo de 16 caracteres"),
     email: yup
       .string()
-      .required("email obrigatório")
-      .email("email obrigatŕoio"),
+      .required("Email obrigatório")
+      .email("Email obrigatŕoio"),
     password: yup
       .string()
       .min(8, "Mínimo de 8 dígitos")
@@ -34,10 +37,13 @@ export const FormRegisterPaciente = () => {
         /^((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
         "Senha deve conter ao menos uma letra maiúscula, uma minúscula, um número e um caracter especial"
       ),
-    date: yup.date().required("data obrigatório"),
-    cpf: yup.string().required("CPF obrigatório"),
-    genre: yup.string().required("gênero obrigatório"),
-    address: yup.string().required("endereço obigatório"),
+    date: yup.date().required("Data obrigatório"),
+    cpf: yup
+      .string()
+      .required("CPF obrigatório")
+      .matches(/^\d{3}\.\d{3}\.\d{3}\-\d{2}$/, "CPF invalido"),
+    genre: yup.string().required("Gênero obrigatório"),
+    address: yup.string().required("Endereço obigatório"),
   });
 
   const {
@@ -95,7 +101,7 @@ export const FormRegisterPaciente = () => {
           name="password"
           register={register}
           error={errors.password?.message}
-          placeholder="uma senha"
+          placeholder="Digite sua senha"
         />
 
         <Input
@@ -113,7 +119,7 @@ export const FormRegisterPaciente = () => {
           name="cpf"
           register={register}
           error={errors.cpf?.message}
-          placeholder="Seu CPF"
+          placeholder="Digite seu CPF"
         />
 
         <Input
@@ -126,8 +132,10 @@ export const FormRegisterPaciente = () => {
           IsSelect
         >
           <option value="">gênero</option>
-          <option value="F">F</option>
-          <option value="M">M</option>
+          <option value="Masculino">Masculino</option>
+          <option value="Feminino">Feminino</option>
+          <option value="Outro">Outro</option>
+          <option value="Não informado">Prefiro não dizer</option>
         </Input>
 
         <Input
