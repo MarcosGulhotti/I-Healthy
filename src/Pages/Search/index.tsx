@@ -1,11 +1,12 @@
 import { Container, BoxSearch, Header, Modal } from "./style";
 import { CardUser } from "../../Components/CardUser";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { api } from "../../Services/api";
 import { IUserSearch } from "../../Types";
 import BounceLoader from "react-spinners/BounceLoader";
 import { Menu } from "../../Components/Menu";
 import { useHistory } from "react-router";
+import { useAuth } from "../../Providers/Auth";
 
 const PageSearch = () => {
   const [loading, setLoading] = useState<boolean>(false);
@@ -17,6 +18,11 @@ const PageSearch = () => {
   const [users, setUsers] = useState<IUserSearch[]>([]);
   const history = useHistory();
 
+  const { isAuth } = useAuth();
+
+  if (isAuth === "null") {
+    history.push("/login");
+  }
   const toSchedule = async (doctor: object) => {
     setLoading(true);
     history.push("/doctorcalendar", doctor);
@@ -27,10 +33,6 @@ const PageSearch = () => {
     setLoad(false);
     setUsers(data);
   };
-
-  useEffect(() => {
-    getUsers();
-  }, []);
 
   const search = async (
     type: string,

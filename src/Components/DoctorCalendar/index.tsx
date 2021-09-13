@@ -40,7 +40,7 @@ export const DocCalendar = () => {
       events: [...doctorEvents, userCalendar],
     };
 
-    let output = [];
+    const output = [];
     for (let i = 0; i < doctorEvents.length; i++) {
       if (doctorEvents[i].date === docCalendar.date) {
         output.push(true);
