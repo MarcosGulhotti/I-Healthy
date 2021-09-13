@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 
 const Home = () => {
   const history = useHistory();
+
   return (
     <Background image={LandingPage}>
       <Container>
