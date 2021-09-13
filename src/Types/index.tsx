@@ -60,6 +60,12 @@ export interface ILoginUser {
   email: string;
   password: string;
 }
+
+export interface IEvents {
+  title: string;
+  date: string;
+}
+
 export interface IuserData {
   username: string;
   id: number;
@@ -67,8 +73,7 @@ export interface IuserData {
   gender: string;
   adress: string;
   specialty: string;
-  patients: [];
-  events: [];
+  events: IEvents[];
   isProfessional: boolean;
 }
 
