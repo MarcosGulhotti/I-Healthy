@@ -85,3 +85,7 @@ export interface IUserSearch {
   loading: boolean;
   func: () => void;
 }
+
+export interface UserProviderData {
+  user: IuserData;
+}
