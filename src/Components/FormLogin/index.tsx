@@ -11,10 +11,10 @@ import { Container } from './style'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import toast from 'react-hot-toast'
+import { useAuth } from '../../Providers/Auth'
 
 export const FormLogin = () => {
-
-
+    const { setIsAuth } = useAuth()
     const formSchema = yup.object().shape({
         email: yup.string().required("email obrigatório").email("email obrigatŕoio"),
         password: yup.string().min(8, "Mínimo de 8 dígitos")
@@ -37,8 +37,8 @@ export const FormLogin = () => {
             const { data } = await api.post("/login", user)
             setLoading(false)
             localStorage.setItem("@Kenzie:id", data.user.id)
+            setIsAuth(localStorage.getItem("@Kenzie:id") || "null")
             toast.success("Seja bem vindo")
-            console.log(data)
             history.push("/dashboard")
             
         }catch{
