@@ -60,10 +60,6 @@ export interface ILoginUser {
   email: string;
   password: string;
 }
-
-export interface IUserHeaderProps {
-  isPacient?: boolean;
-}
 export interface IuserData {
   username: string;
   id: number;
