@@ -75,3 +75,13 @@ export interface IuserData {
   events: [];
   isProfessional: boolean;
 }
+
+export interface IUserSearch {
+  id?: number;
+  name: string;
+  specialty: string;
+  genre: string;
+  city: string;
+  loading: boolean;
+  func: () => void
+}
