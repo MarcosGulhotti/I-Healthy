@@ -7,9 +7,9 @@ const UserContext = createContext<UserProviderData>({} as UserProviderData);
 
 export const UserProvider = ({ children }: ProviderChildren) => {
   const [user, setUser] = useState<IuserData>({} as IuserData);
-  const id = JSON.parse(localStorage.getItem("@Kenzie:id") || "");
+  const id = localStorage.getItem("@Kenzie:id") || "";
 
-  const getUser = async (id: number) => {
+  const getUser = async (id: string) => {
     try {
       const { data } = await api.get(`/users?id=${id}`);
       if (!data) {
