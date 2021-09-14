@@ -15,7 +15,7 @@ export const BoxSearch = styled.div`
     flex-wrap: wrap;
     justify-content: space-evenly;
     width: 90%;
-    height: 75vh;
+    height: 80vh;
     border-radius: 1rem 0;
     margin: 0 auto;
     background: var(--Main-Black);

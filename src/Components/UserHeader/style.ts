@@ -43,7 +43,7 @@ export const User = styled.div`
     font-size: 36px;
   }
   > p {
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 25px;
     margin: 6px;
   }
@@ -54,6 +54,7 @@ export const User = styled.div`
     padding: 5px;
     border: none;
     border-radius: 0.75rem 0;
+    margin-top: 10px;
   }
   button:active {
     transform: scale(0.98);
@@ -67,7 +68,7 @@ export const User = styled.div`
       font-size: 25px;
     }
     > p {
-      font-size: 24px;
+      font-size: 20px;
       margin-bottom: 15px;
       /* margin: 6px; */
       text-align: center;
@@ -78,21 +79,23 @@ export const User = styled.div`
 export const Modal = styled.div<{ modal: boolean }>`
   position: absolute;
   top: 160px;
-  left: 51%;
-  padding: 30px;
   background: var(--Second-Black);
   font-family: var(--Font-Roboto-Mono);
   border-radius: 0 0.75rem;
   z-index: 10;
-  transition: opacity 0.5s;
-  opacity: ${(props) => (props.modal ? "100" : "0")};
+
+  width: 250px;
+  padding: 10px;
   ul {
+    width: 100%;
+    height: 150px;
     li {
       background: var(--Main-Gray);
-      margin-bottom: 10px;
+      margin-bottom: 28px;
       padding: 5px;
       border-radius: 0.5rem 0;
       font-weight: 600;
+      font-size: 0.9rem;
       color: var(--Main-Black);
       display: flex;
       flex-flow: wrap;
@@ -100,8 +103,13 @@ export const Modal = styled.div<{ modal: boolean }>`
       max-width: 250px;
     }
   }
-
-  @media (max-width: 400px) {
-    left: 30%;
+  @media (max-width: 320px) {
+    left: 21%;
+  }
+  @media (min-width: 375px) {
+    left: 33%;
+  }
+  @media (min-width: 425px) {
+    left: 41%;
   }
 `;

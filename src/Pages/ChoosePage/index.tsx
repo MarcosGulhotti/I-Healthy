@@ -3,13 +3,20 @@ import { Container } from "./styles";
 import img from "./../../Assets/Images/ChoosePage.svg";
 import { Button } from "../../Components/Button";
 import { useHistory } from "react-router-dom";
+import { useAuth } from "../../Providers/Auth";
 
 const ChoosePage = () => {
   const history = useHistory();
+  const { isAuth } = useAuth();
+
+  if (isAuth !== "null") {
+    history.push("/login");
+  }
+
   return (
     <Background image={img}>
       <Container>
-        <h1>Aplicação</h1>
+        <h1>IHealthy</h1>
         <p>
           Você deseja se registrar como um paciente ou como um profissional de
           saúde, selecione abaixo.

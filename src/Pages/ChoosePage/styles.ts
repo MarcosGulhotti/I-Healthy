@@ -11,6 +11,7 @@ export const Container = styled.div`
     margin: 30px 0;
     font-family: var(--Font-Roboto-Mono);
     color: var(--Second-Black);
+    font-size: 3rem;
   }
   > p {
     color: var(--Second-Black);

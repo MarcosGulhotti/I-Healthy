@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { blackImage, redImage } from "../../Utils/CalendarImages";
 
-export const StyledContainer = styled.div<{ error: string }>`
+export const StyledContainer = styled.div<{ error: string}>`
   display: flex;
   align-items: center;
   margin: 0 auto;
@@ -26,6 +26,7 @@ export const StyledContainer = styled.div<{ error: string }>`
     width: 20px;
     height: 20px;
   }
+
   select,
   input {
     flex: 1;
