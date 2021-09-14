@@ -34,12 +34,13 @@ export const Container = styled.div`
     }
     p {
       text-align: center;
+      font-family: var(--Font-Saira);
       margin: 10px 0px;
-      font-size: 1.2rem;
-      font-weight: bold;
+      font-size: 24px;
+      font-weight: 600;
     }
   }
-  p.link{
+  p.link {
     margin-bottom: 50px;
   }
 `;

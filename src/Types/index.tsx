@@ -71,7 +71,7 @@ export interface IuserData {
   id: number;
   cpf: string;
   gender: string;
-  adress: string;
+  address: string;
   specialty: string;
   events: IEvents[];
   isProfessional: boolean;

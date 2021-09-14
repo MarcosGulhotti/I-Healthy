@@ -12,9 +12,6 @@ export const UserProvider = ({ children }: ProviderChildren) => {
   const getUser = async (id: string) => {
     try {
       const { data } = await api.get(`/users?id=${id}`);
-      if (!data) {
-        throw Error;
-      }
       setUser(data[0]);
     } catch {
       toast.error("algo deu errado");
@@ -25,6 +22,7 @@ export const UserProvider = ({ children }: ProviderChildren) => {
     getUser(id);
   }, [id]);
 
+  console.log(user);
   return (
     <UserContext.Provider value={{ user }}>{children}</UserContext.Provider>
   );

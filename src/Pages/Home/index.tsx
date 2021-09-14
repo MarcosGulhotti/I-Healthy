@@ -20,8 +20,8 @@ const Home = () => {
         <div>
           <Button onClick={() => history.push("/login")}>Entrar</Button>
           <p>Ou</p>
-          <Button onClick={() => history.push("/choosePage")} GreenTheme>
-            Registrar
+          <Button onClick={() => history.push("/choosepage")} GreenTheme>
+            Cadastrar-se
           </Button>
         </div>
       </Container>
