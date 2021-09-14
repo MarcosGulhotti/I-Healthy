@@ -9,6 +9,7 @@ export const Container = styled.div`
     margin: 0 auto;
     padding: 0 1rem;
     width: 80%;
+  
   }
 
   .container-inputs {

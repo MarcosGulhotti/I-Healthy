@@ -108,7 +108,7 @@ export const FormRegisterProfissional = () => {
             name="password"
             register={register}
             error={errors.password?.message}
-            placeholder="uma senha"
+            placeholder="Digite sua senha"
           />
 
           <Input
@@ -117,7 +117,6 @@ export const FormRegisterProfissional = () => {
             name="date"
             register={register}
             error={errors.date?.message}
-            placeholder="Sua data de nascimento"
           />
 
           <Input
@@ -126,7 +125,7 @@ export const FormRegisterProfissional = () => {
             name="cpf"
             register={register}
             error={errors.cpf?.message}
-            placeholder="Seu CPF"
+            placeholder="Digite seu CPF"
           />
 
           <Input

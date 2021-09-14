@@ -13,11 +13,13 @@ export const PContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-content: center;
-    padding-top: 12%;
+    padding-top: 7%;
     padding-bottom: 10%;
     width: 90%;
+    height: 50%;
+    overflow: auto;
 `
 export const PButton = styled.button`
     background-color: var(--Main-Gray);

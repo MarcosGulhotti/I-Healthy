@@ -31,8 +31,8 @@ const UserHeader = () => {
       <Modal modal={modal}>
         <ul>
           <li>CPF: {user?.cpf}</li>
-          <li>Gênero: {user?.gender === "M" ? "Masculino" : "Feminino"}</li>
-          <li>Endereço: dasdasdasddddsasdassdadasadsddaass</li>
+          <li>Gênero: {user?.gender}</li>
+          <li>Endereço: {user?.address}</li>
         </ul>
       </Modal>
     </Container>
