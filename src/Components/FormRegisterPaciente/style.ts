@@ -3,16 +3,18 @@ import styled from "styled-components";
 export const Container = styled.div`
   position: relative;
   margin-top: 25px;
+  max-height: 450px;
 
   form {
     margin: 0 auto;
     padding: 0 1rem;
-    margin-top: 50px;
+    /* margin-top: 15px; */
     width: 80%;
-    .container-inputs {
-      height: 310px;
-      overflow-y: auto;
-    }
+  }
+
+  .container-inputs {
+    height: 310px;
+    overflow-y: auto;
   }
 
   .link {
