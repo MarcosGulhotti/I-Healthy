@@ -10,7 +10,7 @@ export const Container = styled.div`
   > p {
     font-family: var(--Font-Saira);
     color: var(--Second-Black);
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 600;
   }
   > h1 {
