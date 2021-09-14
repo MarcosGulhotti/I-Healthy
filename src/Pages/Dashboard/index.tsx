@@ -9,16 +9,14 @@ export const Dashboard = () => {
   const { user } = useUser();
 
   return (
-    <>
-      <UserHeader />
       <Container>
+      <UserHeader />
         {user.isProfessional === true ? (
           <ProfessionalDashboard />
         ) : (
           <PatientDashboard />
         )}
-      </Container>
       <Menu />
-    </>
+      </Container>
   );
 };
