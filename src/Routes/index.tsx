@@ -12,7 +12,6 @@ import { useAuth } from "../Providers/Auth";
 const Router = () => {
   const { isAuth } = useAuth();
 
-  console.log(isAuth);
   return (
     <Switch>
       <Route exact path="/">
