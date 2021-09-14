@@ -1,6 +1,6 @@
 import { Container, BoxSearch, Header, Modal } from "./style";
 import { CardUser } from "../../Components/CardUser";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { api } from "../../Services/api";
 import { IUserSearch } from "../../Types";
 import BounceLoader from "react-spinners/BounceLoader";
@@ -23,6 +23,7 @@ const PageSearch = () => {
   if (isAuth === "null") {
     history.push("/login");
   }
+
   const toSchedule = async (doctor: object) => {
     setLoading(true);
     history.push("/doctorcalendar", doctor);
@@ -43,22 +44,12 @@ const PageSearch = () => {
 
     const { data } = await api.get(`/users/?${type}=${name}`);
     setUsers(data);
-    /* 
-        if(type==="gender"){
-            const  newList = users.filter((user) => user.gender === name)
-            setUsers(newList)
-        }
-        
-        if(type==="typeCalls"){
-            const  newList = users.filter((user) => user.typeCalls === name)
-            setUsers(newList)
-        }
-        
-        if(type==="specialty"){
-            const  newList = users.filter((user) => user.specialty === name)
-            setUsers(newList)
-        }  */
+   
   };
+
+  useEffect(() => {
+    getUsers()
+  }, [])
 
   return (
     <Container>
@@ -66,6 +57,8 @@ const PageSearch = () => {
         <button
           onClick={() => {
             setModal1(!modal1);
+            setModal2(false);
+            setModal3(false);
           }}
         >
           Gênero
@@ -83,6 +76,9 @@ const PageSearch = () => {
                 <button onClick={() => search("gender", "Outros", setModal1)}>
                   Outros
                 </button>
+                <button onClick={() => getUsers()}>
+                  ver todos
+                </button>
               </Modal>
             </div>
           )}
@@ -91,6 +87,8 @@ const PageSearch = () => {
         <button
           onClick={() => {
             setModal2(!modal2);
+            setModal1(false)
+            setModal3(false)
           }}
         >
           Atendimento
@@ -107,6 +105,9 @@ const PageSearch = () => {
               <button onClick={() => search("typeCalls", "Ambos", setModal2)}>
                 Ambos
               </button>
+              <button onClick={() => getUsers()}>
+                ver todos
+              </button>
             </Modal>
           )}
         </button>
@@ -114,6 +115,8 @@ const PageSearch = () => {
         <button
           onClick={() => {
             setModal3(!modal3);
+            setModal1(false)
+            setModal2(false)
           }}
         >
           Especialidade
@@ -191,6 +194,9 @@ const PageSearch = () => {
                 <button onClick={() => search("specialty", "Outro", setModal3)}>
                   Outro
                 </button>
+                <button onClick={() => getUsers()}>
+                  ver todos
+                </button>
               </Modal>
             </div>
           )}
@@ -204,6 +210,7 @@ const PageSearch = () => {
           </>
         ) : (
           <>
+            {users.length === 0 && <h2> Nem um Profissional encontrado :(</h2>}
             {users.map((user) => {
               return (
                 <CardUser
@@ -217,7 +224,7 @@ const PageSearch = () => {
                 />
               );
             })}
-            <button onClick={() => getUsers()}>resetar</button>
+            
           </>
         )}
 
