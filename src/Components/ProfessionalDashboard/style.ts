@@ -3,29 +3,32 @@ import styled from "styled-components";
 export const Title = styled.h2`
     text-align: center;
     font-family: var(--Font-Saira);
+    margin-top: 2%;
+    margin-bottom: 4%;
 `
 export const PContainer = styled.div`
     position: relative;
     background-color: var(--Main-Black);
-    border-radius: 10px 0 10px 0;
+    border-radius: 25px 0 25px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     align-content: center;
-    /* height: 300px; */
+    padding-top: 12%;
+    padding-bottom: 10%;
     width: 90%;
-    /* height: 90%; */
 `
 export const PButton = styled.button`
     background-color: var(--Main-Gray);
     border: none;
     color: var(--Main-White);
-    border-radius: 10px 0 10px 0;
-    width:90%;
-    height: 30px;
-    font-family: var(--Font-Roboto-Mono);
+    border-radius: 15px 0 15px 0;
+    width: 85%;
+    font-family: var(--Font-Saira);
     font-weight: bolder;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    padding: 10px 0 10px 0;
+    font-size: large;
 `
