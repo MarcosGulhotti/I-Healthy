@@ -25,7 +25,7 @@ const Router = () => {
         <PageRegister profissional />
       </Route>
 
-      <Route path="/choosePage">
+      <Route path="/choosepage">
         <ChoosePage />
       </Route>
 

@@ -10,7 +10,7 @@ export const Container = styled.div`
   > p {
     font-family: var(--Font-Saira);
     color: var(--Second-Black);
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 600;
   }
   > h1 {
@@ -29,9 +29,10 @@ export const Container = styled.div`
     > p {
       text-align: center;
       padding: 10px;
-      font-weight: bolder;
+      font-family: var(--Font-Saira);
+      font-weight: 600;
       text-align: center;
-      font-size: 20px;
+      font-size: 24px;
     }
   }
   @media (min-width: 460px) {

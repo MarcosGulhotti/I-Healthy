@@ -32,15 +32,17 @@ export const Container = styled.div`
 export const BoxCalendar = styled.div`
   
     background: var(--Main-Black);
-    height: 50%;
+    height: 60%;
     width: 100%;
     padding: 0rem 5px;
     padding-bottom: 10px;
     color: var(--Main-White);
     border-radius: 1rem  0;
 
-    display: flex;
+   /*  display: flex;
     align-items: center;
     justify-content: center;
+ */
+
 
 `

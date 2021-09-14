@@ -274,7 +274,7 @@ export const FormRegisterProfissional = () => {
           <p className="span-text"> Ou </p>
 
           <div className="box-right">
-            <Button>Voltar</Button>
+            <Button onClick={() => history.push("/")}>Voltar</Button>
           </div>
         </div>
       </form>

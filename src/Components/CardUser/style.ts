@@ -29,6 +29,10 @@ export const Container = styled.div`
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+
+        h2{
+            text-align: left;
+        }
     }
 
     .box-img{

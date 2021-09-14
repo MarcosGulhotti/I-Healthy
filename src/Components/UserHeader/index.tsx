@@ -7,7 +7,6 @@ const UserHeader = () => {
   const [modal, setModal] = useState<boolean>(false);
   const handleModal = () => setModal(!modal);
   const { user } = useUser();
-
   return (
     <Container isPacient={!user.isProfessional}>
       <div>
@@ -17,8 +16,8 @@ const UserHeader = () => {
       </div>
       {!user.isProfessional ? (
         <User>
-          <h2>{user?.username}</h2>
-          <p>usuário</p>
+          <h2>Paciente</h2>
+          <p>{user?.username}</p>
           <button onClick={handleModal}> Ver mais </button>
         </User>
       ) : (
@@ -32,8 +31,8 @@ const UserHeader = () => {
       <Modal modal={modal}>
         <ul>
           <li>CPF: {user?.cpf}</li>
-          <li>Genero: {user?.gender === "M" ? "Masculino" : "Feminino"}</li>
-          <li>Endereco: {user?.adress}</li>
+          <li>Gênero: {user?.gender}</li>
+          <li>Endereço: {user?.address}</li>
         </ul>
       </Modal>
     </Container>

@@ -7,7 +7,12 @@ export const Container = styled.div`
   form {
     margin: 0 auto;
     padding: 0 1rem;
+    margin-top: 50px;
     width: 80%;
+    .container-inputs {
+      height: 310px;
+      overflow-y: auto;
+    }
   }
 
   .link {
@@ -23,7 +28,7 @@ export const Container = styled.div`
   }
 
   .container-Buttons {
-    margin: 8px 0px;
+    margin: 10px 0px;
 
     .box-right {
       text-align: center;
@@ -36,17 +41,14 @@ export const Container = styled.div`
 
     p {
       text-align: center;
-      margin: 5px 0px;
-      font-size: 1.2rem;
-      font-weight: bold;
+      margin: 10px 0px;
+      font-size: 24px;
+      font-family: var(--Font-Saira);
+      font-weight: 600;
     }
 
     button {
-      height: 35px;
-      width: 125px;
-      font-size: 1.1rem;
-      font-family: "saira";
-      border-radius: 5px;
+      font-family: var(--Font-Saira);
     }
   }
 `;
