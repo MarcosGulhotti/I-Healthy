@@ -21,10 +21,11 @@ export const UserProvider = ({ children }: ProviderChildren) => {
 
   useEffect(() => {
     getUser(id);
-  }, [id]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
-    <UserContext.Provider value={{ user }}>{children}</UserContext.Provider>
+    <UserContext.Provider value={{ user, getUser }}>{children}</UserContext.Provider>
   );
 };
 
