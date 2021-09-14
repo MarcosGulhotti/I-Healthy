@@ -59,7 +59,6 @@ export const User = styled.div`
   }
 `;
 export const Modal = styled.div<{ modal: boolean }>`
-  display: none;
   position: absolute;
   top: 160px;
   left: 51%;
@@ -70,6 +69,21 @@ export const Modal = styled.div<{ modal: boolean }>`
   z-index: 10;
   transition: opacity 0.5s;
   opacity: ${(props) => (props.modal ? "100" : "0")};
+  ul {
+    li {
+      background: var(--Main-Gray);
+      margin-bottom: 10px;
+      padding: 5px;
+      border-radius: 0.5rem 0;
+      font-weight: 600;
+      color: var(--Main-Black);
+      display: flex;
+      flex-flow: wrap;
+      word-break: break-all;
+      max-width: 250px;
+    }
+  }
+
   @media (max-width: 400px) {
     left: 30%;
   }

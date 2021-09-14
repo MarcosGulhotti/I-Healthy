@@ -78,76 +78,77 @@ export const FormRegisterPaciente = () => {
   return (
     <Container>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Input
-          icon={<FaUser />}
-          type="text"
-          name="username"
-          register={register}
-          error={errors.username?.message}
-          placeholder="Digite seu nome"
-        />
+        <div className="container-inputs">
+          <Input
+            icon={<FaUser />}
+            type="text"
+            name="username"
+            register={register}
+            error={errors.username?.message}
+            placeholder="Digite seu nome"
+          />
 
-        <Input
-          icon={<HiOutlineMail />}
-          type="email"
-          name="email"
-          register={register}
-          error={errors.email?.message}
-          placeholder="Digite seu email"
-        />
+          <Input
+            icon={<HiOutlineMail />}
+            type="email"
+            name="email"
+            register={register}
+            error={errors.email?.message}
+            placeholder="Digite seu email"
+          />
 
-        <Input
-          icon={<RiLockPasswordLine />}
-          type="password"
-          name="password"
-          register={register}
-          error={errors.password?.message}
-          placeholder="Digite sua senha"
-        />
+          <Input
+            icon={<RiLockPasswordLine />}
+            type="password"
+            name="password"
+            register={register}
+            error={errors.password?.message}
+            placeholder="Digite sua senha"
+          />
 
-        <Input
-          icon={<FaRegCalendarAlt />}
-          type="date"
-          name="date"
-          register={register}
-          error={errors.date?.message}
-          placeholder="Sua data de nascimento"
-        />
+          <Input
+            icon={<FaRegCalendarAlt />}
+            type="date"
+            name="date"
+            register={register}
+            error={errors.date?.message}
+            placeholder="Sua data de nascimento"
+          />
 
-        <Input
-          icon={<FaAddressCard />}
-          type="text"
-          name="cpf"
-          register={register}
-          error={errors.cpf?.message}
-          placeholder="Digite seu CPF"
-        />
+          <Input
+            icon={<FaAddressCard />}
+            type="text"
+            name="cpf"
+            register={register}
+            error={errors.cpf?.message}
+            placeholder="Digite seu CPF"
+          />
 
-        <Input
-          icon={<FaTransgender />}
-          type="text"
-          name="gender"
-          register={register}
-          error={errors.gender?.message}
-          placeholder="Seu gênero"
-          IsSelect
-        >
-          <option value="">gênero</option>
-          <option value="Masculino">Masculino</option>
-          <option value="Feminino">Feminino</option>
-          <option value="Outro">Outro</option>
-          <option value="Não informado">Prefiro não dizer</option>
-        </Input>
+          <Input
+            icon={<FaTransgender />}
+            type="text"
+            name="gender"
+            register={register}
+            error={errors.gender?.message}
+            placeholder="Seu gênero"
+            IsSelect
+          >
+            <option value="">gênero</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+            <option value="Outro">Outro</option>
+            <option value="Não informado">Prefiro não dizer</option>
+          </Input>
 
-        <Input
-          icon={<FaMapMarkedAlt />}
-          type="text"
-          name="address"
-          register={register}
-          error={errors.address?.message}
-          placeholder="Seu endereço"
-        />
-
+          <Input
+            icon={<FaMapMarkedAlt />}
+            type="text"
+            name="address"
+            register={register}
+            error={errors.address?.message}
+            placeholder="Seu endereço"
+          />
+        </div>
         <p className="link">
           <Link to="/login">Já possui conta?</Link>
         </p>
