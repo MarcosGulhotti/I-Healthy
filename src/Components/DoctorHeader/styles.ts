@@ -43,7 +43,7 @@ export const User = styled.div`
     font-size: 36px;
   }
   > p {
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 25px;
     margin: 6px;
   }
@@ -54,6 +54,7 @@ export const User = styled.div`
     padding: 5px;
     border: none;
     border-radius: 0.75rem 0;
+    margin-top: 10px;
   }
   button:active {
     transform: scale(0.98);
@@ -67,7 +68,7 @@ export const User = styled.div`
       font-size: 25px;
     }
     > p {
-      font-size: 24px;
+      font-size: 20px;
       margin-bottom: 15px;
       /* margin: 6px; */
       text-align: center;
@@ -84,8 +85,6 @@ export const Modal = styled.div<{ modal: boolean }>`
   font-family: var(--Font-Roboto-Mono);
   border-radius: 0 0.75rem;
   z-index: 10;
-  transition: opacity 0.5s;
-  opacity: ${(props) => (props.modal ? "100" : "0")};
   ul {
     li {
       background: var(--Main-Gray);

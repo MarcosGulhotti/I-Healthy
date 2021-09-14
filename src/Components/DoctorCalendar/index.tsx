@@ -29,7 +29,10 @@ export const DocCalendar = () => {
   }, [doctorEvents]);
 
   const handleEvent = async (event: string) => {
-    const newUserEvnt = { title: doctor.username.split(" ")[0], date: event };
+    const newUserEvnt = {
+      title: `${doctor.username.split(" ")[0]}`,
+      date: event,
+    };
     const newDocEvnt = { title: user.username.split(" ")[0], date: event };
 
     handleUnity(newUserEvnt, newDocEvnt);

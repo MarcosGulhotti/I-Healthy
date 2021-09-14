@@ -12,20 +12,19 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import toast from "react-hot-toast";
 import { useAuth } from "../../Providers/Auth";
+import { useUser } from "../../Providers/User";
 
 export const FormLogin = () => {
   const { setIsAuth } = useAuth();
+  const { user } = useUser();
   const formSchema = yup.object().shape({
-    email: yup
-      .string()
-      .required("email obrigatório")
-      .email("email obrigatŕoio"),
+    email: yup.string().required("Email obrigatório").email("Email invalido"),
     password: yup
       .string()
       .min(8, "Mínimo de 8 dígitos")
       .matches(
         /^((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
-        "Senha deve conter ao menos uma letra maiúscula, uma minúscula, um número e um caracter especial"
+        "Senha deve conter ao menos 1 letra maiúscula, 1 minúscula, 1 número e 1 caracter especial"
       ),
   });
 
@@ -41,14 +40,14 @@ export const FormLogin = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const history = useHistory();
 
-  const onSubmit = async (user: ILoginUser) => {
+  const onSubmit = async (userData: ILoginUser) => {
     setLoading(true);
     try {
-      const { data } = await api.post("/login", user);
+      const { data } = await api.post("/login", userData);
       setLoading(false);
       localStorage.setItem("@Kenzie:id", data.user.id);
       setIsAuth(localStorage.getItem("@Kenzie:id") || "null");
-      toast.success("Seja bem vindo");
+      toast.success(`Seja bem vindo ${user.username}`);
       history.push("/dashboard");
     } catch {
       toast.error("Senha ou email inválido");
@@ -68,14 +67,13 @@ export const FormLogin = () => {
           error={errors.email?.message}
           placeholder="Digite seu email"
         />
-
         <Input
           icon={<RiLockPasswordLine />}
           type="password"
           name="password"
           register={register}
           error={errors.password?.message}
-          placeholder="uma senha"
+          placeholder="Digite sua senha"
         />
 
         <p className="link">

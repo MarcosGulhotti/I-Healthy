@@ -10,8 +10,6 @@ export const UserCalendar = () => {
   const { isAuth } = useAuth();
   const history = useHistory();
 
-  console.log(user);
-
   if (isAuth === "null") {
     history.push("/login");
   }

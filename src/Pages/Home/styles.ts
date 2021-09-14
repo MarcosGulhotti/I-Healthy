@@ -7,6 +7,7 @@ export const Container = styled.div`
   text-align: center;
   position: relative;
   z-index: 1;
+
   > p {
     font-family: var(--Font-Saira);
     color: var(--Second-Black);
@@ -14,7 +15,8 @@ export const Container = styled.div`
     font-weight: 600;
   }
   > h1 {
-    padding: 50px;
+    font-size: 3rem;
+    margin: 30px 0;
     color: var(--Second-Black);
     font-family: var(--Font-Roboto-Mono);
   }
@@ -71,6 +73,11 @@ export const Container = styled.div`
         text-align: center;
         font-size: 20px;
       }
+    }
+  }
+  @media (max-width: 320px) {
+    p {
+      font-size: 17px;
     }
   }
 `;
