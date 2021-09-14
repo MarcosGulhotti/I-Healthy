@@ -9,11 +9,9 @@ import SearchPage from "../Pages/Search";
 import DoctorCalendar from "../Pages/DoctorCalendarPage";
 import { useAuth } from "../Providers/Auth";
 
-
 const Router = () => {
-  const { isAuth } = useAuth()
+  const { isAuth } = useAuth();
 
-  console.log(isAuth)
   return (
     <Switch>
       <Route exact path="/">
@@ -43,7 +41,7 @@ const Router = () => {
         <Dashboard />
       </Route>
 
-      <Route path='/search'>
+      <Route path="/search">
         <SearchPage />
       </Route>
       <Route path="/doctorcalendar">
