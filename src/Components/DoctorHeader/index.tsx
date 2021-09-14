@@ -2,10 +2,13 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { api } from "../../Services/api";
 import { IuserData } from "../../Types";
-import { Container } from "./styles";
+import { Container, User, Modal } from "./styles";
 import img from "./../../Assets/Images/User.svg";
+
 const DoctorHeader = async (id: number) => {
   const [user, setUser] = useState<IuserData>({} as IuserData);
+  const [modal, setModal] = useState<boolean>(false);
+  const handleModal = () => setModal(!modal);
 
   try {
     const { data } = await api.get(`/users?id=${id}`);
@@ -15,25 +18,33 @@ const DoctorHeader = async (id: number) => {
   }
 
   return (
-    <Container>
+    <Container isPacient={!user.isProfessional}>
       <div>
         <figure>
           <img src={img} alt="userImage" />
         </figure>
       </div>
       {!user.isProfessional ? (
-        <div>
+        <User>
           <h2>Paciente</h2>
           <p>{user?.username}</p>
-          <button> Ver mais </button>
-        </div>
+          <button onClick={handleModal}> Ver mais </button>
+        </User>
       ) : (
-        <div>
+        <User>
           <h2>{user?.username}</h2>
           <p>{user?.specialty}</p>
-          <button> Ver mais </button>
-        </div>
+          <button onClick={handleModal}> Ver mais </button>
+        </User>
       )}
+
+      <Modal modal={modal}>
+        <ul>
+          <li>CPF: {user?.cpf}</li>
+          <li>Gênero: {user?.gender}</li>
+          <li>Endereço: {user?.address}</li>
+        </ul>
+      </Modal>
     </Container>
   );
 };
