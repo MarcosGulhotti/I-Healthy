@@ -8,11 +8,12 @@ export const Container = styled.div`
 `
 
 export const BoxSearch = styled.div`
-    
+
+    overflow: auto;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     justify-content: space-evenly;
-    flex-direction: column;
     width: 90%;
     height: 75vh;
     border-radius: 1rem 0;
@@ -24,6 +25,8 @@ export const BoxSearch = styled.div`
       color: var(--Main-White);
       font-family: 'saira';
     }
+
+    
 `
 
 export const Header = styled.div`
@@ -92,3 +95,15 @@ export const Modal = styled.div<{ modal: boolean }>`
   }
 
 `;
+
+/* export const Content = styled.div`
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+
+` */
