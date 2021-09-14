@@ -7,6 +7,13 @@ import img from "./../../Assets/Images/User.svg";
 const DoctorHeader = async (id: number) => {
   const [user, setUser] = useState<IuserData>({} as IuserData);
 
+  try {
+    const { data } = await api.get(`/users?id=${id}`);
+    setUser(data[0]);
+  } catch {
+    toast.error("algo deu errado");
+  }
+
   return (
     <Container>
       <div>

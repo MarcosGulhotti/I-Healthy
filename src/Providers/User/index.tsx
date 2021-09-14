@@ -7,7 +7,6 @@ const UserContext = createContext<UserProviderData>({} as UserProviderData);
 
 export const UserProvider = ({ children }: ProviderChildren) => {
   const [user, setUser] = useState<IuserData>({} as IuserData);
-  const [searchUser, setSearchUser] = useState<IuserData>({} as IuserData);
   const id = localStorage.getItem("@Kenzie:id") || "";
 
   const getUser = async (id: string) => {
@@ -21,11 +20,13 @@ export const UserProvider = ({ children }: ProviderChildren) => {
 
   useEffect(() => {
     getUser(id);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <UserContext.Provider value={{ user, getUser }}>{children}</UserContext.Provider>
+    <UserContext.Provider value={{ user, getUser }}>
+      {children}
+    </UserContext.Provider>
   );
 };
 
