@@ -112,7 +112,6 @@ export const FormRegisterPaciente = () => {
             name="date"
             register={register}
             error={errors.date?.message}
-            placeholder="Sua data de nascimento"
           />
 
           <Input
@@ -133,7 +132,7 @@ export const FormRegisterPaciente = () => {
             placeholder="Seu gênero"
             IsSelect
           >
-            <option value="">gênero</option>
+            <option value="">Gênero</option>
             <option value="Masculino">Masculino</option>
             <option value="Feminino">Feminino</option>
             <option value="Outro">Outro</option>

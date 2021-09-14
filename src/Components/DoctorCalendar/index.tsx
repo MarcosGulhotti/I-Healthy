@@ -7,11 +7,14 @@ import { StyledCalendar } from "./style";
 import { api } from "../../Services/api";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import { IEvents } from "../../Types";
 
 export const DocCalendar = () => {
   const { user } = useUser();
   const history = useHistory();
-  const [doctorEvents, setDoctorEvents] = useState<any>([]);
+  const [doctorEvents, setDoctorEvents] = useState<
+    { title: string; date: string }[]
+  >([]);
 
   const doctor: any = history.location.state;
 
@@ -32,23 +35,23 @@ export const DocCalendar = () => {
     handleUnity(newUserEvnt, newDocEvnt);
   };
 
-  const handleUnity = async (userCalendar: any, docCalendar: any) => {
+  const handleUnity = async (userCalendar: IEvents, docCalendar: IEvents) => {
     const newDoc = {
       events: [...doctorEvents, docCalendar],
     };
     const newUser = {
-      events: [...doctorEvents, userCalendar],
+      events: [...user.events, userCalendar],
     };
+    const checkUnity = [];
 
-    const output = [];
     for (let i = 0; i < doctorEvents.length; i++) {
       if (doctorEvents[i].date === docCalendar.date) {
-        output.push(true);
+        checkUnity.push(true);
       } else {
-        output.push(false);
+        checkUnity.push(false);
       }
     }
-    if (!output.includes(true)) {
+    if (!checkUnity.includes(true)) {
       try {
         await api.patch(`/users/${user.id}`, newUser);
         await api.patch(`/users/${doctor.id}`, newDoc);

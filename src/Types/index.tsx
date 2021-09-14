@@ -89,6 +89,7 @@ export interface IUserSearch {
 
 export interface UserProviderData {
   user: IuserData;
+  getUser: (id: string) => void;
 }
 
 export interface AuthProviderData {
