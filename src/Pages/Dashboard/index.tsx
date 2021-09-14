@@ -12,7 +12,11 @@ export const Dashboard = () => {
     <>
       <UserHeader />
       <Container>
-        {user.isProfessional ? <ProfessionalDashboard /> : <PatientDashboard />}
+        {user.isProfessional === true ? (
+          <ProfessionalDashboard />
+        ) : (
+          <PatientDashboard />
+        )}
       </Container>
       <Menu />
     </>
