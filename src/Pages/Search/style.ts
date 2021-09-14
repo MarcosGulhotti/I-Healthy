@@ -18,6 +18,12 @@ export const BoxSearch = styled.div`
     border-radius: 1rem 0;
     margin: 0 auto;
     background: var(--Main-Black);
+   
+    h2{
+      text-align: center;
+      color: var(--Main-White);
+      font-family: 'saira';
+    }
 `
 
 export const Header = styled.div`
@@ -58,7 +64,7 @@ export const Modal = styled.div<{ modal: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   position: absolute;
   width: 160px;
   height: 140px;
@@ -73,13 +79,11 @@ export const Modal = styled.div<{ modal: boolean }>`
   transition: opacity 0.5s;
   opacity: ${(props) => (props.modal ? "100" : "0")};
   opacity: ${(props) => (props.modal ? "100" : "0")};
- 
 
   button{
-      border: 1px solid;
-      width: 80%;
-      margin: 5px 0;
-      border-radius: 15px;
+      border-radius: 15px 2px;
+      width: 90%;
+      margin: 8px 0;
       background: var(--Main-Purple);
   }
 

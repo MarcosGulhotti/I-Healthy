@@ -2,21 +2,24 @@ import styled from "styled-components";
 
 export const StyledCalendar = styled.div`
   .fc-media-screen {
-    height: 600px;
-    max-height: 600px;
-    color: var(--Main-Black);
+    height: 430px;
+    max-height: 430px;
+    color: var(--Main-White);
   }
   .fc-daygrid {
     height: 535px;
+  }
+  .fc-scrollgrid-liquid{
+    height: 70%;
   }
   .fc-scroller-liquid-absolute {
     overflow: hidden;
   }
   .fc-col-header-cell-cushion {
-    color: black;
+    color: white;
   }
   .fc-daygrid-day-number {
-    color: black;
+    color: white;
   }
   .fc-event-title-container {
     background-color: black;
@@ -60,5 +63,8 @@ export const StyledCalendar = styled.div`
   .fc-prev-button,
   .fc-next-button {
     background-color: var(--Main-Black);
+  }
+  .fc .fc-scrollgrid-section-body table, .fc .fc-scrollgrid-section-footer table{
+    width: 100%;
   }
 `;

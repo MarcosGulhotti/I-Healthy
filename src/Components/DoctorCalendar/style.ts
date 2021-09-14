@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledCalendar = styled.div`
   .fc-media-screen {
-    height: 600px;
+    height: 90px;
     max-height: 600px;
     color: var(--Main-Black);
   }
@@ -25,10 +25,9 @@ export const StyledCalendar = styled.div`
     border: none;
     background: none;
   }
-  .fc-daygrid-day-frame {
+   .fc-daygrid-day-frame {
     max-height: 150px;
-    height: 100px;
-    overflow: auto;
+    height: 60px;
   }
   .fc-toolbar-title {
     font-size: 1.5rem;
@@ -61,4 +60,6 @@ export const StyledCalendar = styled.div`
   .fc-next-button {
     background-color: var(--Main-Black);
   }
+
+ 
 `;
