@@ -9,12 +9,12 @@ export const StyledMenu = styled.ul`
   align-items: center;
   border-radius: 10px;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
-  background: #1e2759;
+  background: var(--Main-Black);
 
   li {
     list-style: none;
 
-    &:hover {
+    .active {
       opacity: 1;
     }
 
@@ -35,24 +35,26 @@ export const StyledMenu = styled.ul`
       }
     }
   }
+`
 
-  #marker {
+export const StyledMarker = styled.div<{left: string, width: string, isProfessional: boolean}>`
+  position: absolute;
+  top: 0;
+  transition: 0.5s;
+  z-index: 1;
+  left: ${props => props.left && props.left};
+  width: ${props => props.width && props.width};
+
+  ::before {
+    content: '';
     position: absolute;
-    top: 0;
-    transition: 0.5s;
-    z-index: 1;
-
-    ::before {
-      content: '';
-      position: absolute;
-      top: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 50px;
-      height: 40px;
-      border-radius: 8px;
-      background: #5da6ff;
-      box-shadow: 0 0 15px #5da6ff, 0 0 30px #5da6ff, 0 0 45px #5da6ff, 0 0 60px #5da6ff;
-    }
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 40px;
+    border-radius: 8px;
+    background: ${props => props.isProfessional ? '#0041ff' : '#37DB7F'};
+    box-shadow: ${props => props.isProfessional ? '0 0 15px #0041ff, 0 0 30px #0041ff, 0 0 45px #0041ff, 0 0 60px #0041ff' : '0 0 15px #37DB7F, 0 0 30px #37DB7F, 0 0 45px #37DB7F, 0 0 60px #37DB7F'};
   }
 `
