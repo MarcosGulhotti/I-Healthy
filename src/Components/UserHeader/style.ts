@@ -96,7 +96,7 @@ export const Modal = styled.div<{ modal: boolean }>`
       color: var(--Main-Black);
       display: flex;
       flex-flow: wrap;
-      word-break: keep-all;
+      word-break: break-word;
       max-width: 250px;
     }
   }
