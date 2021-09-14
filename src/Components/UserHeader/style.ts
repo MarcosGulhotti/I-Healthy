@@ -22,6 +22,16 @@ export const Container = styled.div<{ isPacient: boolean }>`
       }
     }
   }
+  @media (max-width: 400px) {
+    > div {
+      figure {
+        margin: 0px;
+        height: 55px;
+        width: 55px;
+      }
+    }
+    padding-bottom: 15px;
+  }
 `;
 export const User = styled.div`
   display: flex;
@@ -56,6 +66,13 @@ export const User = styled.div`
     > h2 {
       font-size: 25px;
     }
+    > p {
+      font-size: 24px;
+      margin-bottom: 15px;
+      /* margin: 6px; */
+      text-align: center;
+      width: 202px;
+    }
   }
 `;
 export const Modal = styled.div<{ modal: boolean }>`
@@ -79,7 +96,7 @@ export const Modal = styled.div<{ modal: boolean }>`
       color: var(--Main-Black);
       display: flex;
       flex-flow: wrap;
-      word-break: break-all;
+      word-break: break-word;
       max-width: 250px;
     }
   }
