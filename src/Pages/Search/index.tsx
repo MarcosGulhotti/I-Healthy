@@ -41,8 +41,9 @@ const PageSearch = () => {
     setModal: (bol: boolean) => void
   ) => {
     setModal(false);
-
+    setLoad(true)
     const { data } = await api.get(`/users/?${type}=${name}`);
+    setLoad(false)
     setUsers(data);
    
   };
@@ -204,6 +205,7 @@ const PageSearch = () => {
       </Header>
 
       <BoxSearch>
+       
         {load ? (
           <>
             <BounceLoader color="#37DB7F" size="100px" />
@@ -213,22 +215,21 @@ const PageSearch = () => {
             {users.length === 0 && <h2> Nem um Profissional encontrado :(</h2>}
             {users.map((user) => {
               return (
-                <CardUser
-                  key={user.id}
-                  username={user.username}
-                  gender={user.gender}
-                  specialty={user.specialty}
-                  typeCalls={user.typeCalls}
-                  func={() => toSchedule(user)}
-                  loading={loading}
-                />
-              );
-            })}
-            
+                    <CardUser
+                    key={user.id}
+                    username={user.username}
+                    gender={user.gender}
+                    specialty={user.specialty}
+                    typeCalls={user.typeCalls}
+                    func={() => toSchedule(user)}
+                    loading={loading}
+                  />
+                  );
+                })}
           </>
         )}
 
-        <Menu />
+          <Menu />
       </BoxSearch>
     </Container>
   );

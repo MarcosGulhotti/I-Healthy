@@ -12,7 +12,7 @@ export const CardUser = ({username, specialty, gender, typeCalls, loading=false,
                 </div>
                 
                 <div className="box box-content">
-                    <h2>{username}</h2>
+                    <h2>{username.split(" ")[0]}</h2>
                     <p>{gender}</p>
                     <p>{specialty}</p>
                     <p>{typeCalls}</p>
