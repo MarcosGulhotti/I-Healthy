@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const StyledMenu = styled.ul`
-  @media (max-width: 768px) {
+  @media (min-width: 769px) {
     display: none;
   }
   
