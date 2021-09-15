@@ -50,6 +50,7 @@ export const Container = styled.div`
     > div {
       > button {
         margin-right: 10rem;
+        height: 60px;
       }
       p ~ button {
         margin-left: 20rem;

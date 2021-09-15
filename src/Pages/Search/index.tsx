@@ -218,7 +218,7 @@ const PageSearch = () => {
           </>
         ) : (
           <>
-            {users.length === 0 && <h2> Nem um Profissional encontrado :(</h2>}
+            {users.length === 0 && <h2> Nenhum Profissional encontrado :(</h2>}
             {users.map((user) => {
               return (
                 <CardUser

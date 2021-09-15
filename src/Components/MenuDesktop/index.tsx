@@ -10,7 +10,7 @@ export const MenuDesktop = () => {
   }
 
   return (
-    <StyledHeaderMenu isProfessional={user.isProfessional}>
+    <StyledHeaderMenu isProfessional={user?.isProfessional}>
       <ul>
         <Link to='/contact'>
           <i className='far fa-id-card'></i>
