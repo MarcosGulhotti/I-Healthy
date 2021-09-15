@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
 export const StyledMenu = styled.ul`
+  @media (max-width: 768px) {
+    display: none;
+  }
+  
   position: fixed;
   bottom: 0;
   width: 100%;

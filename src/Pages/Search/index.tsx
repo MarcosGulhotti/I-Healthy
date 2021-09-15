@@ -7,6 +7,7 @@ import BounceLoader from "react-spinners/BounceLoader";
 import { Menu } from "../../Components/Menu";
 import { useHistory } from "react-router";
 import { useAuth } from "../../Providers/Auth";
+import { MenuDesktop } from '../../Components/MenuDesktop'
 
 const PageSearch = () => {
   const [loading, setLoading] = useState<boolean>(false);
