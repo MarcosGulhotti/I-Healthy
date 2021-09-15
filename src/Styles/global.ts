@@ -19,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
 
     }
 
-    body, div, ul, button, p, img, nav, a, input, h1, h2, select{
+    body, div, ul, li, button, p, img, nav, a, input, h1, h2, select{
         margin: 0;
         padding: 0;
         list-style-type: none;
