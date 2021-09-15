@@ -110,3 +110,15 @@ export interface IModalSenha {
 export interface Iteste {
   DocId: number;
 }
+
+export interface IContactCardProps {
+  Dados: {
+    name: string;
+    img: string;
+    role: string;
+    cellphone: string;
+    linkedin: string;
+    github: string;
+    gitlab: string;
+  };
+}

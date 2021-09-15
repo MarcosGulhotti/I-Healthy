@@ -44,7 +44,14 @@ export const StyledBackground = styled.div`
     bottom: -145px;
     left: 55px;
   }
+  //desktop
   @media (min-width: 1024px) {
+    display: flex;
+    justify-content: center;
+    span {
+      width: 500px;
+      height: 500px;
+    }
     .first {
       top: -120px;
       left: 330px;
@@ -52,7 +59,7 @@ export const StyledBackground = styled.div`
 
     .second {
       top: 100px;
-      left: 50px;
+      left: -30px;
     }
 
     .third {
@@ -62,16 +69,18 @@ export const StyledBackground = styled.div`
 
     .fourth {
       bottom: -145px;
-      left: 50px;
+      left: -30px;
     }
-    display: flex;
-    justify-content: center;
     img {
       width: 40rem;
       left: 330px;
     }
     div {
       width: 50%;
+    }
+    button {
+      width: 270.89px;
+      height: 73.83px;
     }
   }
 `;

@@ -8,6 +8,7 @@ import PatientCalendar from "../Pages/PatientCalendar";
 import SearchPage from "../Pages/Search";
 import DoctorCalendar from "../Pages/DoctorCalendarPage";
 import { useAuth } from "../Providers/Auth";
+import { ContactPage } from '../Pages/ContactPage'
 
 const Router = () => {
   const { isAuth } = useAuth();
@@ -19,6 +20,9 @@ const Router = () => {
       </Route>
       <Route exact path="/patient">
         <PageRegister />
+      </Route>
+      <Route exact path='/contact'>
+        <ContactPage />
       </Route>
 
       <Route exact path="/professional">
