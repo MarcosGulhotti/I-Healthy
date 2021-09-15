@@ -12,9 +12,8 @@ export const PatientDashboard = () => {
     <>
       <Title>Suas Consultas</Title>
       <PContainer>
-        {user.events?.length === 0 && <h2>Você não tem nenhuma consulta</h2>}
-        {user.events?.map((e) => (
-          <PButton>
+        {user?.events?.map((e, i) => (
+          <PButton key={i}>
             <p>{e.title}</p>
             {reserveDate(e.date)}
           </PButton>

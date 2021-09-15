@@ -19,7 +19,7 @@ export const DocCalendar = () => {
   const doctor: any = history.location.state;
 
   const getDoctorEvents = async () => {
-    const doutor = await api.get(`users/${doctor.id}`);
+    const doutor = await api.get(`/users/${doctor.id}`);
     setDoctorEvents([...doutor.data.events]);
   };
 
@@ -58,6 +58,7 @@ export const DocCalendar = () => {
       try {
         await api.patch(`/users/${user.id}`, newUser);
         await api.patch(`/users/${doctor.id}`, newDoc);
+        toast.success("Consulta marcada!!");
       } catch (error) {
         console.log(error);
       }

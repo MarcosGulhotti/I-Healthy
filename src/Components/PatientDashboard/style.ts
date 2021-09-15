@@ -29,6 +29,15 @@ export const PContainer = styled.div`
     color: var(--Main-White);
     font-family: "saira";
   }
+
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    padding-top: 50px;
+  }
 `;
 export const PButton = styled.div`
   background-color: var(--Main-Gray);
@@ -49,4 +58,15 @@ export const PButton = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media screen and (min-width: 1024px) {
+    width: 35%;
+    height: 75px;
+
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    margin-top: 1%;
+  }
 `;

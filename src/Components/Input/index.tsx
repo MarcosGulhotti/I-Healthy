@@ -13,7 +13,7 @@ export const Input = ({
   ...rest
 }: ComponentInput) => {
   return (
-    <StyledContainer error={error}>
+    <StyledContainer error={error} className="container-input">
       {IsSelect ? (
         <>
           {icon}
