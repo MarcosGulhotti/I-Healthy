@@ -94,6 +94,7 @@ export const Container = styled.div`
       align-items: center;
       > button {
         margin-right: 10vh;
+        height: 60px;
       }
       p ~ button {
         margin-left: 30vh;

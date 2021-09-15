@@ -1,6 +1,7 @@
-import { Menu } from '../../Components/Menu'
-import { StyledContainer, StyledContactDiv } from './style'
-import { ContactCard } from '../../Components/ContactCard'
+import { Menu } from "../../Components/Menu";
+import { StyledContainer, StyledContactDiv } from "./style";
+import { ContactCard } from "../../Components/ContactCard";
+import { MenuDesktop } from "../../Components/MenuDesktop";
 
 const Dados = {
   Marcos: {
@@ -26,8 +27,7 @@ const Dados = {
     img: "sua foto do slack aqui",
     role: "sua role aqui",
     cellphone: "seu celular aqui",
-    linkedin:
-      "link do seu linkedin",
+    linkedin: "link do seu linkedin",
     gitlab: "link do seu gitlab",
     github: "link do seu github",
   },
@@ -36,8 +36,7 @@ const Dados = {
     img: "sua foto do slack aqui",
     role: "sua role aqui",
     cellphone: "seu celular aqui",
-    linkedin:
-      "link do seu linkedin",
+    linkedin: "link do seu linkedin",
     gitlab: "link do seu gitlab",
     github: "link do seu github",
   },
@@ -46,26 +45,26 @@ const Dados = {
     img: "sua foto do slack aqui",
     role: "sua role aqui",
     cellphone: "seu celular aqui",
-    linkedin:
-      "link do seu linkedin",
+    linkedin: "link do seu linkedin",
     gitlab: "link do seu gitlab",
     github: "link do seu github",
-  }
-}
+  },
+};
 
 export const ContactPage = () => {
-  const { Marcos, Arthur, Anthony, Leonardo, Leandro } = Dados 
+  const { Marcos, Arthur, Anthony, Leonardo, Leandro } = Dados;
 
   return (
     <StyledContainer>
+      <MenuDesktop />
       <StyledContactDiv>
-        <ContactCard Dados={Marcos}/>
-        <ContactCard Dados={Arthur}/>
-        <ContactCard Dados={Anthony}/>
-        <ContactCard Dados={Leonardo}/>
-        <ContactCard Dados={Leandro}/>
+        <ContactCard Dados={Marcos} />
+        <ContactCard Dados={Arthur} />
+        <ContactCard Dados={Anthony} />
+        <ContactCard Dados={Leonardo} />
+        <ContactCard Dados={Leandro} />
       </StyledContactDiv>
       <Menu />
     </StyledContainer>
-  )
-}
+  );
+};

@@ -116,7 +116,7 @@ export const Modal = styled.div<{ modal: boolean }>`
   padding: 10px;
   ul {
     width: 100%;
-    height: 150px;
+    height: 170px;
     li {
       background: var(--Main-Gray);
       margin-bottom: 28px;

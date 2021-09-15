@@ -26,6 +26,21 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         text-decoration: none;
         outline: none;
+        ::-webkit-scrollbar {
+      width: 12px;
+    }
+    ::-webkit-scrollbar-track {
+      border: 1px solid black;
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: lightgray; 
+      border-radius: 8px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--Main-White); 
+    }
+
     }
     body{
         background-color: var(---Background);
