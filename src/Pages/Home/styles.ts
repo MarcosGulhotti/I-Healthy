@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Background } from "../../Components/Background";
 
 export const Container = styled.div`
   display: flex;
@@ -78,6 +79,31 @@ export const Container = styled.div`
   @media (max-width: 320px) {
     p {
       font-size: 17px;
+    }
+  }
+  //Desktop
+  @media (min-width: 1024px) {
+    > p {
+      font-size: 24px;
+      padding: 0 90px;
+    }
+    > div {
+      width: 50vh;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      > button {
+        margin-right: 10vh;
+      }
+      p ~ button {
+        margin-left: 30vh;
+      }
+      p {
+        padding: 10px;
+        font-weight: bolder;
+        text-align: center;
+        font-size: 20px;
+      }
     }
   }
 `;
