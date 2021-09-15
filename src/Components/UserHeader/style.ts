@@ -91,8 +91,11 @@ export const User = styled.div`
   }
   //desktop
   @media (min-width: 1024px) {
+    h2 {
+      font-size: 2.5rem;
+    }
     p {
-      font-size: 48px;
+      font-size: 30px;
       font-family: var(--Font-Saira);
     }
     button {

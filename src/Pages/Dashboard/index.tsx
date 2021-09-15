@@ -1,5 +1,6 @@
 import { useHistory } from "react-router";
 import { Menu } from "../../Components/Menu";
+import { MenuDesktop } from "../../Components/MenuDesktop";
 import { PatientDashboard } from "../../Components/PatientDashboard";
 import { ProfessionalDashboard } from "../../Components/ProfessionalDashboard";
 import UserHeader from "../../Components/UserHeader";
@@ -17,6 +18,7 @@ export const Dashboard = () => {
   }
   return (
     <Container>
+      <MenuDesktop />
       <UserHeader />
       {user?.isProfessional && <ProfessionalDashboard />}
       {!user?.isProfessional && <PatientDashboard />}

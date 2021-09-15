@@ -5,6 +5,9 @@ export const Title = styled.h2`
   font-family: var(--Font-Saira);
   margin-top: 2px;
   margin-bottom: 5px;
+  @media (min-width: 1024px) {
+    font-size: 3rem;
+  }
 `;
 export const PContainer = styled.div`
   background-color: var(--Main-Black);
