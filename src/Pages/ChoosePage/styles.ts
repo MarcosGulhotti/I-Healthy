@@ -45,7 +45,7 @@ export const Container = styled.div`
     justify-content: center;
     > p {
       font-size: 24px;
-      padding: 6rem 5rem;
+      padding: 6rem 7rem;
     }
     > div {
       > button {
@@ -56,4 +56,7 @@ export const Container = styled.div`
       }
     }
   }
+`;
+export const Color = styled.strong`
+  color: var(--Main-Orange);
 `;

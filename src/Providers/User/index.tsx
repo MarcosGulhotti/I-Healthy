@@ -21,7 +21,7 @@ export const UserProvider = ({ children }: ProviderChildren) => {
   useEffect(() => {
     getUser(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [id]);
 
   return (
     <UserContext.Provider value={{ user, getUser, id }}>

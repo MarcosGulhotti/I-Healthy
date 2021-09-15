@@ -8,9 +8,8 @@ export const ProfessionalDashboard = () => {
     <>
       <Title>Seus Pacientes</Title>
       <PContainer>
-        {user.events?.length === 0 && <h2>Você não tem nenhuma consulta</h2>}
-        {user.events?.map((e) => (
-          <PButton>{e.title}</PButton>
+        {user?.events?.map((e, i) => (
+          <PButton key={i}>{e.title}</PButton>
         ))}
       </PContainer>
     </>

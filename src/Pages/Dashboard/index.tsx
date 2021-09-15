@@ -18,8 +18,8 @@ export const Dashboard = () => {
   return (
     <Container>
       <UserHeader />
-      {user.isProfessional && <ProfessionalDashboard />}
-      {!user.isProfessional && <PatientDashboard />}
+      {user?.isProfessional && <ProfessionalDashboard />}
+      {!user?.isProfessional && <PatientDashboard />}
       <Menu />
     </Container>
   );
