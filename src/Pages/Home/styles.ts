@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Background } from "../../Components/Background";
 
 export const Container = styled.div`
   display: flex;
@@ -7,14 +8,16 @@ export const Container = styled.div`
   text-align: center;
   position: relative;
   z-index: 1;
+
   > p {
     font-family: var(--Font-Saira);
     color: var(--Second-Black);
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 600;
   }
   > h1 {
-    padding: 50px;
+    font-size: 3rem;
+    margin: 30px 0;
     color: var(--Second-Black);
     font-family: var(--Font-Roboto-Mono);
   }
@@ -29,9 +32,10 @@ export const Container = styled.div`
     > p {
       text-align: center;
       padding: 10px;
-      font-weight: bolder;
+      font-family: var(--Font-Saira);
+      font-weight: 600;
       text-align: center;
-      font-size: 20px;
+      font-size: 24px;
     }
   }
   @media (min-width: 460px) {
@@ -66,9 +70,39 @@ export const Container = styled.div`
       }
       p {
         padding: 10px;
-        font-weight: bolder;
+        font-weight: 600;
         text-align: center;
         font-size: 20px;
+      }
+    }
+  }
+  @media (max-width: 320px) {
+    p {
+      font-size: 17px;
+    }
+  }
+  //Desktop
+  @media (min-width: 1024px) {
+    > p {
+      font-size: 24px;
+      padding: 0 90px;
+    }
+    > div {
+      width: 50vh;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      > button {
+        margin-right: 10vh;
+      }
+      p ~ button {
+        margin-left: 30vh;
+      }
+      p {
+        padding: 10px;
+        font-weight: 600;
+        text-align: center;
+        font-size: 24px;
       }
     }
   }

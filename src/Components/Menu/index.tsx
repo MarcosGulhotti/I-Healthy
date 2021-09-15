@@ -1,43 +1,75 @@
-import { StyledMenu } from './style'
-import { Link } from 'react-router-dom'
+import { StyledMenu, StyledMarker } from "./style";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useUser } from "../../Providers/User";
 
 export const Menu = () => {
-  const marker: any = document.querySelector('#marker')
-  /* const list = document.querySelectorAll('ul li') */
-  
-  const moveIndicator = (num: number) => {
-    marker.style.left = num + 'px'
-    marker.style.width = num + 'px'
+  const { user } = useUser();
+  const [color, setColor] = useState<number>(0);
+  const [left, setLeft] = useState("");
+  const [width, setWidth] = useState("");
+
+  const moveIndicator = (e: any, num: number) => {
+    setLeft(`${e.target.offsetLeft}px`);
+    setWidth(`${e.target.offsetWidth}px`);
+    setColor(num);
+  };
+
+  const handleLogout = () => {
+    localStorage.clear()
   }
 
   return (
     <StyledMenu>
       <li>
-        <Link to='/' onClick={() => moveIndicator(22)}>
-          <i className="fas fa-home"></i>
+        <Link
+          to="/contact"
+          onClick={(e) => moveIndicator(e, 2)}
+          className={color === 2 && "active"}
+        >
+          <i className={`far fa-id-card ${color === 2 && "active"}`}></i>
         </Link>
       </li>
       <li>
-        <Link to='/' onClick={() => moveIndicator(64)}>
-          <i className="fas fa-user"></i>
+        <Link
+          to="/search"
+          onClick={(e) => moveIndicator(e, 4)}
+          className={color === 4 && "active"}
+        >
+          <i className={`fas fa-search ${color === 4 && "active"}`}></i>
         </Link>
       </li>
       <li>
-        <Link to='/' onClick={() => moveIndicator(108)}>
-          <i className="fas fa-plus-circle"></i>
+        <Link
+          to="/dashboard"
+          onClick={(e) => moveIndicator(e, 1)}
+          className={color === 1 && "active"}
+        >
+          <i className={`fas fa-home ${color === 1 && "active"}`}></i>
         </Link>
       </li>
       <li>
-        <Link to='/' onClick={() => moveIndicator(152)}>
-          <i className="fas fa-search"></i>
+        <Link
+          to="/calendar"
+          onClick={(e) => moveIndicator(e, 5)}
+          className={color === 5 && "active"}
+        >
+          <i className={`far fa-calendar-alt ${color === 5 && "active"}`}></i>
         </Link>
       </li>
       <li>
-        <Link to='/' onClick={() => moveIndicator(194)}>
-          <i className="far fa-calendar-alt"></i>
+        <Link 
+          to="/login" 
+          onClick={() => handleLogout()}>
+          <i className='fas fa-sign-out-alt'></i>
         </Link>
       </li>
-      <div id="marker"></div>
+      <StyledMarker
+        id="marker"
+        left={left}
+        width={width}
+        isProfessional={user?.isProfessional}
+      />
     </StyledMenu>
-  )
-}
+  );
+};

@@ -7,35 +7,53 @@ export const Container = styled.div`
   text-align: center;
   position: relative;
   z-index: 1;
-  >h1{
-    padding: 50px;
+  > h1 {
+    margin: 30px 0;
     font-family: var(--Font-Roboto-Mono);
-    color: var(--Second-Black)
+    color: var(--Second-Black);
+    font-size: 3rem;
   }
-  >p{
+  > p {
     color: var(--Second-Black);
     font-family: var(--Font-Saira);
-    font-size: 18px;
+    font-size: 19px;
+    font-weight: 600;
   }
-  p + div{
+  p + div {
     padding: 50px;
   }
-  >div{
+  > div {
     width: 50vh;
     display: flex;
     flex-flow: column;
     align-items: center;
-    >p{
-      padding: 20px;
+    > p {
+      margin: 10px 0;
       font-size: 24px;
       font-family: var(--Font-Saira);
       font-weight: 600;
     }
-    >button{
+    > button {
       margin-right: 5rem;
     }
     p ~ button {
       margin-left: 9rem;
     }
   }
-`
+  //desktop
+  @media (min-width: 1024px) {
+    justify-content: center;
+    > p {
+      font-size: 24px;
+      padding: 6rem 5rem;
+    }
+    > div {
+      > button {
+        margin-right: 10rem;
+      }
+      p ~ button {
+        margin-left: 20rem;
+      }
+    }
+  }
+`;

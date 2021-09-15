@@ -44,4 +44,35 @@ export const StyledBackground = styled.div`
     bottom: -145px;
     left: 55px;
   }
+  //desktop
+  @media (min-width: 1024px) {
+    .first {
+      top: -120px;
+      left: 330px;
+    }
+
+    .second {
+      top: 100px;
+      left: 50px;
+    }
+
+    .third {
+      bottom: 100px;
+      left: 330px;
+    }
+
+    .fourth {
+      bottom: -145px;
+      left: 50px;
+    }
+    display: flex;
+    justify-content: center;
+    img {
+      width: 40rem;
+      left: 330px;
+    }
+    div {
+      width: 50%;
+    }
+  }
 `;

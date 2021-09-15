@@ -1,25 +1,29 @@
 import { Container, Modal, User } from "./style";
 import img from "./../../Assets/Images/User.svg";
-import { useState } from "react";
-import { IUserHeaderProps } from "../../Types";
+import { useEffect, useState } from "react";
 import { useUser } from "../../Providers/User";
 
-const UserHeader = ({ isPacient = false }: IUserHeaderProps) => {
+const UserHeader = () => {
   const [modal, setModal] = useState<boolean>(false);
   const handleModal = () => setModal(!modal);
-  const { user } = useUser();
+  const { user, getUser, id } = useUser();
+
+  useEffect(() => {
+    getUser(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
-    <Container isPacient={isPacient}>
+    <Container isPacient={!user?.isProfessional}>
       <div>
         <figure>
           <img src={img} alt="userImage" />
         </figure>
       </div>
-      {isPacient ? (
+      {!user?.isProfessional ? (
         <User>
-          <h2>{user?.username}</h2>
-          <p>usuário</p>
+          <h2>Paciente</h2>
+          <p>{user?.username}</p>
           <button onClick={handleModal}> Ver mais </button>
         </User>
       ) : (
@@ -29,14 +33,15 @@ const UserHeader = ({ isPacient = false }: IUserHeaderProps) => {
           <button onClick={handleModal}> Ver mais </button>
         </User>
       )}
-
-      <Modal modal={modal}>
-        <ul>
-          <li>CPF: {user?.cpf}</li>
-          <li>Genero: {user?.gender === "M" ? "Masculino" : "Feminino"}</li>
-          <li>Endereco: {user?.adress}</li>
-        </ul>
-      </Modal>
+      {modal && (
+        <Modal modal={modal}>
+          <ul>
+            <li>CPF: {user?.cpf}</li>
+            <li>Gênero: {user?.gender}</li>
+            <li>Endereço: {user?.address}</li>
+          </ul>
+        </Modal>
+      )}
     </Container>
   );
 };

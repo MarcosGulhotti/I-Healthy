@@ -2,21 +2,24 @@ import styled from "styled-components";
 
 export const StyledCalendar = styled.div`
   .fc-media-screen {
-    height: 600px;
-    max-height: 600px;
-    color: var(--Main-Black);
+    height: 430px;
+    max-height: 430px;
+    color: var(--Main-White);
   }
   .fc-daygrid {
     height: 535px;
+  }
+  .fc-scrollgrid-liquid {
+    height: 100%;
   }
   .fc-scroller-liquid-absolute {
     overflow: hidden;
   }
   .fc-col-header-cell-cushion {
-    color: black;
+    color: white;
   }
   .fc-daygrid-day-number {
-    color: black;
+    color: white;
   }
   .fc-event-title-container {
     background-color: black;
@@ -26,28 +29,49 @@ export const StyledCalendar = styled.div`
     background: none;
   }
   .fc-daygrid-day-frame {
-    max-height: 150px;
-    height: 100px;
+    max-height: 85px;
+    height: 80px;
     overflow: auto;
   }
   .fc-toolbar-title {
     font-size: 1.5rem;
   }
+  .fc-header-toolbar {
+    padding: 10px;
+  }
+  .fc .fc-daygrid-day.fc-day-today {
+    background-color: #848484;
+  }
+  .fc .fc-view-harness-active > .fc-view {
+    height: 395px;
+  }
+  @media (max-width: 323px) {
+    .fc-toolbar-title {
+      font-size: 1.2rem;
+    }
+    .fc .fc-view-harness-active > .fc-view {
+      height: 370px;
+    }
+  }
   .fc-today-button:enabled {
-    width: 35px;
+    width: 45px;
     height: 25px;
     padding: 0;
     font-size: 0.7rem;
     font-weight: bold;
     background-color: var(--Main-Black);
+    color: white;
+    border: 1px solid white;
   }
   .fc-today-button:disabled {
-    background-color: var(--Main-Black);
-    width: 35px;
+    width: 45px;
     height: 25px;
     padding: 0;
     font-size: 0.7rem;
     font-weight: bold;
+    background-color: var(--Main-Black);
+    color: white;
+    border: 1px solid white;
   }
   .fc-button-group {
     gap: 2px;
@@ -60,5 +84,11 @@ export const StyledCalendar = styled.div`
   .fc-prev-button,
   .fc-next-button {
     background-color: var(--Main-Black);
+    border: 1px solid white;
+    font-size: 1.2rem;
+  }
+  .fc .fc-scrollgrid-section-body table,
+  .fc .fc-scrollgrid-section-footer table {
+    width: 100%;
   }
 `;

@@ -44,16 +44,21 @@ export interface RegisterPaciente {
 }
 
 export interface RegisterProfissional {
-  username: string;
-  date: string;
-  cpf: string;
-  gerenro: string;
-  address: string;
-  register: string;
-  specialty: string;
-  demands: string;
-  typeCalls: string;
-  schedule: string;
+  username?: string;
+  email?: string;
+  date?: string;
+  cpf?: string;
+  gender?: string;
+  address?: string;
+  register?: string;
+  specialty?: string;
+  demands?: string;
+  typeCalls?: string;
+  schedule?: string;
+  id?: number;
+  events?: [];
+  password?: string;
+  isProfessional?: boolean;
 }
 
 export interface ILoginUser {
@@ -61,31 +66,59 @@ export interface ILoginUser {
   password: string;
 }
 
-export interface IUserHeaderProps {
-  isPacient?: boolean;
+export interface IEvents {
+  title: string;
+  date: string;
 }
+
 export interface IuserData {
   username: string;
   id: number;
   cpf: string;
   gender: string;
-  adress: string;
+  address: string;
   specialty: string;
-  patients: [];
-  events: [];
+  events: IEvents[];
   isProfessional: boolean;
 }
 
 export interface IUserSearch {
   id?: number;
-  name: string;
-  specialty: string;
-  genre: string;
-  city: string;
-  loading: boolean;
+  username?: string;
+  specialty?: string;
+  gender?: string;
+  typeCalls?: string;
+  loading?: boolean;
   func: () => void;
 }
 
 export interface UserProviderData {
   user: IuserData;
+  getUser: (id: string) => void;
+  id: string;
+}
+
+export interface AuthProviderData {
+  isAuth: string;
+  setIsAuth: (value: string) => void;
+}
+
+export interface IModalSenha {
+  error: string;
+}
+
+export interface Iteste {
+  DocId: number;
+}
+
+export interface IContactCardProps {
+  Dados: {
+    name: string;
+    img: string;
+    role: string;
+    cellphone: string;
+    linkedin: string;
+    github: string;
+    gitlab: string;
+  };
 }

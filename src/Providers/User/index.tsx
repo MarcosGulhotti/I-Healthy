@@ -7,16 +7,9 @@ const UserContext = createContext<UserProviderData>({} as UserProviderData);
 
 export const UserProvider = ({ children }: ProviderChildren) => {
   const [user, setUser] = useState<IuserData>({} as IuserData);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [id, setId] = useState<number>(() => {
-    const data = localStorage.getItem("@Kenzie:id");
-    if (data) {
-      return JSON.parse(data);
-    }
-    return 0;
-  });
+  const id = localStorage.getItem("@Kenzie:id") || "";
 
-  const getUser = async (id: number) => {
+  const getUser = async (id: string) => {
     try {
       const { data } = await api.get(`/users?id=${id}`);
       setUser(data[0]);
@@ -27,10 +20,13 @@ export const UserProvider = ({ children }: ProviderChildren) => {
 
   useEffect(() => {
     getUser(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   return (
-    <UserContext.Provider value={{ user }}>{children}</UserContext.Provider>
+    <UserContext.Provider value={{ user, getUser, id }}>
+      {children}
+    </UserContext.Provider>
   );
 };
 

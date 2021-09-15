@@ -29,7 +29,7 @@ export const Input = ({
             {...register(name)}
             {...rest}
             type={type}
-            />
+          />
         </>
       )}
     </StyledContainer>

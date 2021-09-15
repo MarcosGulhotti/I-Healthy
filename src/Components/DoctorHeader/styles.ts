@@ -79,23 +79,19 @@ export const User = styled.div`
 export const Modal = styled.div<{ modal: boolean }>`
   position: absolute;
   top: 160px;
+  left: 51%;
+  padding: 30px;
   background: var(--Second-Black);
   font-family: var(--Font-Roboto-Mono);
   border-radius: 0 0.75rem;
   z-index: 10;
-
-  width: 250px;
-  padding: 10px;
   ul {
-    width: 100%;
-    height: 150px;
     li {
       background: var(--Main-Gray);
-      margin-bottom: 28px;
+      margin-bottom: 10px;
       padding: 5px;
       border-radius: 0.5rem 0;
       font-weight: 600;
-      font-size: 0.9rem;
       color: var(--Main-Black);
       display: flex;
       flex-flow: wrap;
@@ -103,13 +99,8 @@ export const Modal = styled.div<{ modal: boolean }>`
       max-width: 250px;
     }
   }
-  @media (max-width: 320px) {
-    left: 21%;
-  }
-  @media (min-width: 375px) {
-    left: 33%;
-  }
-  @media (min-width: 425px) {
-    left: 41%;
+
+  @media (max-width: 400px) {
+    left: 30%;
   }
 `;

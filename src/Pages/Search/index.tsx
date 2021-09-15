@@ -6,6 +6,7 @@ import { IUserSearch } from "../../Types";
 import BounceLoader from "react-spinners/BounceLoader";
 import { Menu } from "../../Components/Menu";
 import { useHistory } from "react-router";
+import { useAuth } from "../../Providers/Auth";
 
 const PageSearch = () => {
   const [loading, setLoading] = useState<boolean>(false);
@@ -14,27 +15,25 @@ const PageSearch = () => {
   const [modal2, setModal2] = useState<boolean>(false);
   const [modal3, setModal3] = useState<boolean>(false);
 
-  const [users, setusers] = useState<IUserSearch[]>([]);
-
+  const [users, setUsers] = useState<IUserSearch[]>([]);
   const history = useHistory();
+
+  const { isAuth } = useAuth();
+
+  if (isAuth === "null") {
+    history.push("/login");
+  }
 
   const toSchedule = async (doctor: object) => {
     setLoading(true);
-    console.log(doctor);
     history.push("/doctorcalendar", doctor);
   };
 
   const getUsers = async () => {
-    const { data } = await api.get("/users?_limit=3");
+    const { data } = await api.get("/users/?isProfessional=true");
     setLoad(false);
-    setusers(data);
+    setUsers(data);
   };
-
-  useEffect(() => {
-    getUsers();
-  }, []);
-
-  useEffect(() => {}, [users]);
 
   const search = async (
     type: string,
@@ -43,33 +42,59 @@ const PageSearch = () => {
   ) => {
     setModal(false);
     setLoad(true);
-    const { data } = await api.get(`/users?=${type}=${name}`);
-    setusers(data);
+    const { data } = await api.get(`/users/?${type}=${name}`);
     setLoad(false);
-    console.log(`/users?=${type}=${name}`);
+    setUsers(data);
   };
+
+  useEffect(() => {
+    getUsers();
+  }, []);
 
   return (
     <Container>
-      <Header>
-        <button onClick={() => setModal1(!modal1)}>
+      <Header
+        onMouseLeave={() => {
+          setModal1(false);
+          setModal2(false);
+          setModal3(false);
+        }}
+      >
+        <button
+          onClick={() => {
+            setModal1(!modal1);
+            setModal2(false);
+            setModal3(false);
+          }}
+        >
           Gênero
           {modal1 && (
-            <Modal modal={modal1}>
-              <button onClick={() => search("gender", "M", setModal1)}>
-                Masculino
-              </button>
-              <button onClick={() => search("gender", "F", setModal1)}>
-                Feminino
-              </button>
-              <button onClick={() => search("gender", "Outros", setModal1)}>
-                Outros
-              </button>
-            </Modal>
+            <div className="modal-left">
+              <Modal modal={modal1}>
+                <button
+                  onClick={() => search("gender", "Masculino", setModal1)}
+                >
+                  Masculino
+                </button>
+                <button onClick={() => search("gender", "Feminino", setModal1)}>
+                  Feminino
+                </button>
+                <button onClick={() => search("gender", "Outros", setModal1)}>
+                  Outros
+                </button>
+                <button onClick={() => getUsers()}>ver todos</button>
+              </Modal>
+            </div>
           )}
         </button>
 
-        <button onClick={() => setModal2(!modal2)}>
+        <button
+          onClick={() => {
+            setModal2(!modal2);
+            setModal1(false);
+            setModal3(false);
+          }}
+        >
           Atendimento
           {modal2 && (
             <Modal modal={modal2}>
@@ -77,51 +102,123 @@ const PageSearch = () => {
                 Online
               </button>
               <button
-                onClick={() => search("typeCalls", "Presecial", setModal2)}
+                onClick={() => search("typeCalls", "Presencial", setModal2)}
               >
                 Presencial
               </button>
+              <button onClick={() => search("typeCalls", "Ambos", setModal2)}>
+                Ambos
+              </button>
+              <button onClick={() => getUsers()}>ver todos</button>
             </Modal>
           )}
         </button>
 
-        <button onClick={() => setModal3(!modal3)}>
+        <button
+          onClick={() => {
+            setModal3(!modal3);
+            setModal1(false);
+            setModal2(false);
+          }}
+        >
           Especialidade
           {modal3 && (
-            <Modal modal={modal3}>
-              <button
-                onClick={() => search("specialty", "Psicólogo", setModal3)}
-              >
-                Psicólogo
-              </button>
-              <button
-                onClick={() => search("specialty", "Psiquiatra", setModal3)}
-              >
-                Psiquiatra
-              </button>
-              <button
-                onClick={() => search("specialty", "Neurocirurgião", setModal3)}
-              >
-                Neurocirurgião
-              </button>
-            </Modal>
+            <div className="modal-right">
+              <Modal modal={modal3}>
+                <button
+                  onClick={() => search("specialty", "Psicólogo", setModal3)}
+                >
+                  Psicólogo
+                </button>
+                <button
+                  onClick={() => search("specialty", "Psiquiatria", setModal3)}
+                >
+                  Psiquiatra
+                </button>
+                <button
+                  onClick={() =>
+                    search("specialty", "Neurocirurgião", setModal3)
+                  }
+                >
+                  Neurocirurgião
+                </button>
+                <button
+                  onClick={() => search("specialty", "Oftalmologia", setModal3)}
+                >
+                  Oftalmologia
+                </button>
+                <button
+                  onClick={() => search("specialty", "Cardiologia", setModal3)}
+                >
+                  Cardiologia
+                </button>
+                <button
+                  onClick={() => search("specialty", "Radiologia", setModal3)}
+                >
+                  Radiologia
+                </button>
+                <button
+                  onClick={() => search("specialty", "Dermatologia", setModal3)}
+                >
+                  Dermatologia
+                </button>
+                <button
+                  onClick={() =>
+                    search("specialty", "Otorrinolaringologia", setModal3)
+                  }
+                >
+                  Otorrinolari..
+                </button>
+                <button
+                  onClick={() =>
+                    search("specialty", "Cirurgia geral", setModal3)
+                  }
+                >
+                  Cirurgia geral
+                </button>
+                <button
+                  onClick={() => search("specialty", "Pediatria", setModal3)}
+                >
+                  Pediatria
+                </button>
+                <button
+                  onClick={() =>
+                    search("specialty", "Ortopedia e Traumatologia", setModal3)
+                  }
+                >
+                  Ortopedia e Traumatologia
+                </button>
+                <button
+                  onClick={() => search("specialty", "Nefrologia", setModal3)}
+                >
+                  Nefrologia
+                </button>
+                <button onClick={() => search("specialty", "Outro", setModal3)}>
+                  Outro
+                </button>
+                <button onClick={() => getUsers()}>ver todos</button>
+              </Modal>
+            </div>
           )}
         </button>
       </Header>
 
       <BoxSearch>
         {load ? (
-          <BounceLoader color="#37DB7F" size="100px" />
+          <>
+            <BounceLoader color="#37DB7F" size="100px" />
+          </>
         ) : (
           <>
+            {users.length === 0 && <h2> Nem um Profissional encontrado :(</h2>}
             {users.map((user) => {
               return (
                 <CardUser
                   key={user.id}
-                  name={user.name ? user.name.split(" ")[0] : "Nome"}
-                  genre={user.genre ? user.genre : "Gênero"}
+                  username={user.username}
+                  gender={user.gender}
                   specialty={user.specialty}
-                  city={user.city ? user.city : "Cidade"}
+                  typeCalls={user.typeCalls}
                   func={() => toSchedule(user)}
                   loading={loading}
                 />

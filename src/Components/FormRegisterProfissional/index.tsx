@@ -41,7 +41,7 @@ export const FormRegisterProfissional = () => {
       ),
     date: yup.date().required("Data obrigatório"),
     cpf: yup.string().required("CPF obrigatório"),
-    genre: yup.string().required("Gênero obrigatório"),
+    gender: yup.string().required("Gênero obrigatório"),
     address: yup.string().required("Endereço obigatório"),
     register: yup.string().required("Registro obrigatório"),
     specialty: yup.string().required("Especialidade Obrigatória"),
@@ -108,7 +108,7 @@ export const FormRegisterProfissional = () => {
             name="password"
             register={register}
             error={errors.password?.message}
-            placeholder="uma senha"
+            placeholder="Digite sua senha"
           />
 
           <Input
@@ -117,7 +117,6 @@ export const FormRegisterProfissional = () => {
             name="date"
             register={register}
             error={errors.date?.message}
-            placeholder="Sua data de nascimento"
           />
 
           <Input
@@ -126,15 +125,15 @@ export const FormRegisterProfissional = () => {
             name="cpf"
             register={register}
             error={errors.cpf?.message}
-            placeholder="Seu CPF"
+            placeholder="Digite seu CPF"
           />
 
           <Input
             icon={<FaTransgender />}
             type="text"
-            name="genre"
+            name="gender"
             register={register}
-            error={errors.genre?.message}
+            error={errors.gender?.message}
             placeholder="Seu gênero"
             IsSelect
           >
@@ -274,7 +273,7 @@ export const FormRegisterProfissional = () => {
           <p className="span-text"> Ou </p>
 
           <div className="box-right">
-            <Button>Voltar</Button>
+            <Button onClick={() => history.push("/")}>Voltar</Button>
           </div>
         </div>
       </form>

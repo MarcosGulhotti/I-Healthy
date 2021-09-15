@@ -3,7 +3,7 @@ import User from '../../Assets/Images/User.svg'
 
 export const Container = styled.div`
     width: 85%;
-    height: 225px;
+    height: 180px;
     overflow: auto;
     border-radius: 1rem 0;
     background: var(--Main-Gray);
@@ -29,6 +29,10 @@ export const Container = styled.div`
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+
+        h2{
+            text-align: left;
+        }
     }
 
     .box-img{
