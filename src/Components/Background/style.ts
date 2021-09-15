@@ -74,6 +74,7 @@ export const StyledBackground = styled.div`
     img {
       width: 40rem;
       left: 330px;
+      margin-bottom: 10rem;
     }
     div {
       width: 50%;
