@@ -15,12 +15,15 @@ export const StyledHeaderMenu = styled.header<{isProfessional: boolean}>`
     list-style-type: none;
 
     a {
+      display: flex;
+      align-items: center;
       align-self: center;
-      padding: 5px 15px;
+      padding: 5px 5vw;
       text-decoration: none;
-      font-size: 1.5rem;
-      color: ${props => props.isProfessional ? '#008FFF' : '#37DB7F'};
+      font-size: 1.2rem;
+      color: var(--Main-White);
       border-bottom: 4px solid var(--Main-Black);
+      gap: 10px;
 
       &:hover {
         border-bottom: ${props => props.isProfessional ? '4px solid #008FFF' : '4px solid #37DB7F'};
