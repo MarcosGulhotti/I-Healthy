@@ -6,29 +6,49 @@ export const Container = styled.div`
     align-items: center;
     flex-direction: column;
 
+
     @media (min-width: 720px){
     .container-card-user{
         width: 280px;
-        margin: 5px;
+        margin: 10px;
     }
+    
 
     .box-search{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
         width: 90%;
         padding: 10px;
     }
 
     .header{
         background: none;
+        margin: 10px 0;
 
         button{
+            background: var(--Main-Black);
             color: var(--Main-White);
-            background: var(--Main-Purple);
-            width: 130px;
+            width: 170px;
+            height: 35px;
             border-radius: 0.75rem 0;
-            box-shadow: 4px 4px 10px 0px rgba(176,176,176,0.96)
+            font-weight: bold;
         }
 
-       
+        i{
+            margin-right: 10px;
+        }
+    }
+
+    .modal{
+        button{
+            background: var(--Main-White);
+            color: var(--Main-Black);
+            width: 85%;
+            font-size: 16px;
+            line-break: strict;
+        }
     }
 
   }
@@ -120,7 +140,7 @@ export const Modal = styled.div<{ modal: boolean }>`
   }
 
   button:nth-child(2n) {
-    background: var(--Main-Green);
+   // background: var(--Main-Green);
   }
 
 `;

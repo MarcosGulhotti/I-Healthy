@@ -70,12 +70,15 @@ const PageSearch = () => {
             setModal3(false);
           }}
         >
+          <i className="fas fa-venus-mars"></i>
           Gênero
           {modal1 && (
             <div className="modal-left">
-              <Modal modal={modal1}>
+              <Modal modal={modal1} className="modal">
+                
                 <button
                   onClick={() => search("gender", "Masculino", setModal1)}
+                  
                 >
                   Masculino
                 </button>
@@ -98,9 +101,10 @@ const PageSearch = () => {
             setModal3(false);
           }}
         >
+          <i className="fas fa-book"></i>
           Atendimento
           {modal2 && (
-            <Modal modal={modal2}>
+            <Modal modal={modal2} className="modal">
               <button onClick={() => search("typeCalls", "Online", setModal2)}>
                 Online
               </button>
@@ -124,10 +128,11 @@ const PageSearch = () => {
             setModal2(false);
           }}
         >
+          <i className="fas fa-phone-alt"></i>
           Especialidade
           {modal3 && (
             <div className="modal-right">
-              <Modal modal={modal3}>
+              <Modal modal={modal3} className="modal">
                 <button
                   onClick={() => search("specialty", "Psicólogo", setModal3)}
                 >
