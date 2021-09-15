@@ -53,7 +53,9 @@ const PageSearch = () => {
 
   return (
     <Container>
+      
       <Header
+        className="header"
         onMouseLeave={() => {
           setModal1(false);
           setModal2(false);
@@ -203,7 +205,7 @@ const PageSearch = () => {
         </button>
       </Header>
 
-      <BoxSearch>
+      <BoxSearch className="box-search">
         {load ? (
           <>
             <BounceLoader color="#37DB7F" size="100px" />

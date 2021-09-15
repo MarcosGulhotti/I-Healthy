@@ -73,7 +73,6 @@ export const FormRegisterProfissional = () => {
       });
       toast.success("Cadastro realizado com sucesso");
       setLoading(false);
-      console.log(data);
       history.push("/login"); // ou dashboard
     } catch {
       setLoading(false);

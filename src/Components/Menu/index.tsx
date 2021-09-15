@@ -21,7 +21,7 @@ export const Menu = () => {
         <Link
           to="#"
           onClick={(e) => moveIndicator(e, 1)}
-          className={color === 1 && "active"}
+          //className={color === 1 && "active"}
         >
           <i className={`fas fa-home ${color === 1 && "active"}`}></i>
         </Link>
@@ -30,7 +30,7 @@ export const Menu = () => {
         <Link
           to="/dashboard"
           onClick={(e) => moveIndicator(e, 2)}
-          className={color === 2 && "active"}
+          //className={color === 2 && "active"}
         >
           <i className={`fas fa-user ${color === 2 && "active"}`}></i>
         </Link>
@@ -44,7 +44,7 @@ export const Menu = () => {
         <Link
           to="/search"
           onClick={(e) => moveIndicator(e, 4)}
-          className={color === 4 && "active"}
+          //className={color === 4 && "active"}
         >
           <i className={`fas fa-search ${color === 4 && "active"}`}></i>
         </Link>
@@ -53,7 +53,7 @@ export const Menu = () => {
         <Link
           to="/calendar"
           onClick={(e) => moveIndicator(e, 5)}
-          className={color === 5 && "active"}
+          //className={color === 5 && "active"}
         >
           <i className={`far fa-calendar-alt ${color === 5 && "active"}`}></i>
         </Link>
