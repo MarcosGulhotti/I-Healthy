@@ -40,4 +40,20 @@ export const Container = styled.div`
       margin-left: 9rem;
     }
   }
+  //desktop
+  @media (min-width: 1024px) {
+    justify-content: center;
+    > p {
+      font-size: 24px;
+      padding: 6rem 5rem;
+    }
+    > div {
+      > button {
+        margin-right: 10rem;
+      }
+      p ~ button {
+        margin-left: 20rem;
+      }
+    }
+  }
 `;

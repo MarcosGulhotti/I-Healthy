@@ -70,7 +70,7 @@ export const Container = styled.div`
       }
       p {
         padding: 10px;
-        font-weight: bolder;
+        font-weight: 600;
         text-align: center;
         font-size: 20px;
       }
@@ -100,9 +100,9 @@ export const Container = styled.div`
       }
       p {
         padding: 10px;
-        font-weight: bolder;
+        font-weight: 600;
         text-align: center;
-        font-size: 20px;
+        font-size: 24px;
       }
     }
   }
