@@ -5,6 +5,33 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
+
+    @media (min-width: 720px){
+    .container-card-user{
+        width: 280px;
+        margin: 5px;
+    }
+
+    .box-search{
+        width: 90%;
+        padding: 10px;
+    }
+
+    .header{
+        background: none;
+
+        button{
+            color: var(--Main-White);
+            background: var(--Main-Purple);
+            width: 130px;
+            border-radius: 0.75rem 0;
+            box-shadow: 4px 4px 10px 0px rgba(176,176,176,0.96)
+        }
+
+       
+    }
+
+  }
 `
 
 export const BoxSearch = styled.div`
@@ -25,6 +52,8 @@ export const BoxSearch = styled.div`
       color: var(--Main-White);
       font-family: 'saira';
     }
+
+    
 
     
 `
@@ -96,14 +125,3 @@ export const Modal = styled.div<{ modal: boolean }>`
 
 `;
 
-/* export const Content = styled.div`
-
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
-    overflow: auto;
-    width: 100%;
-    height: 100%;
-
-` */
