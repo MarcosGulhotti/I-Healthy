@@ -1,5 +1,5 @@
 import { Background } from "../../Components/Background";
-import { Container } from "./styles";
+import { Color, Container } from "./styles";
 import img from "./../../Assets/Images/ChoosePage.svg";
 import { Button } from "../../Components/Button";
 import { useHistory } from "react-router-dom";
@@ -18,8 +18,8 @@ const ChoosePage = () => {
       <Container>
         <h1>IHealthy</h1>
         <p>
-          Você deseja se registrar como um paciente ou como um profissional de
-          saúde, selecione abaixo.
+          Você deseja se registrar como um <Color>paciente</Color> ou como um{" "}
+          <Color>profissional de saúde</Color>, selecione abaixo.
         </p>
         <div>
           <Button onClick={() => history.push("/patient")}> Paciente </Button>
