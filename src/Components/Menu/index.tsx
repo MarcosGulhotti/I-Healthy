@@ -23,27 +23,11 @@ export const Menu = () => {
     <StyledMenu>
       <li>
         <Link
-          to="/dashboard"
-          onClick={(e) => moveIndicator(e, 1)}
-          className={color === 1 && "active"}
-        >
-          <i className={`fas fa-home ${color === 1 && "active"}`}></i>
-        </Link>
-      </li>
-      <li>
-        <Link
           to="/contact"
           onClick={(e) => moveIndicator(e, 2)}
           className={color === 2 && "active"}
         >
           <i className={`far fa-id-card ${color === 2 && "active"}`}></i>
-        </Link>
-      </li>
-      <li>
-        <Link 
-          to="/login" 
-          onClick={() => handleLogout()}>
-          <i className='fas fa-sign-out-alt'></i>
         </Link>
       </li>
       <li>
@@ -57,11 +41,27 @@ export const Menu = () => {
       </li>
       <li>
         <Link
+          to="/dashboard"
+          onClick={(e) => moveIndicator(e, 1)}
+          className={color === 1 && "active"}
+        >
+          <i className={`fas fa-home ${color === 1 && "active"}`}></i>
+        </Link>
+      </li>
+      <li>
+        <Link
           to="/calendar"
           onClick={(e) => moveIndicator(e, 5)}
           className={color === 5 && "active"}
         >
           <i className={`far fa-calendar-alt ${color === 5 && "active"}`}></i>
+        </Link>
+      </li>
+      <li>
+        <Link 
+          to="/login" 
+          onClick={() => handleLogout()}>
+          <i className='fas fa-sign-out-alt'></i>
         </Link>
       </li>
       <StyledMarker
