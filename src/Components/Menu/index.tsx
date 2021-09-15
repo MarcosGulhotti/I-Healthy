@@ -23,15 +23,6 @@ export const Menu = () => {
     <StyledMenu>
       <li>
         <Link
-          to="/dashboard"
-          onClick={(e) => moveIndicator(e, 1)}
-          //className={color === 1 && "active"}
-        >
-          <i className={`fas fa-home ${color === 1 && "active"}`}></i>
-        </Link>
-      </li>
-      <li>
-        <Link
           to="/contact"
           onClick={(e) => moveIndicator(e, 2)}
           //className={color === 2 && "active"}
