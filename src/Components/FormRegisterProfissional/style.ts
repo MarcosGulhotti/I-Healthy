@@ -9,7 +9,6 @@ export const Container = styled.div`
     margin: 0 auto;
     padding: 0 1rem;
     width: 80%;
-  
   }
 
   .container-inputs {
@@ -51,6 +50,14 @@ export const Container = styled.div`
 
     button {
       font-family: var(--Font-Saira);
+    }
+  }
+  @media (max-width: 320px) {
+    .container-Buttons {
+      .box-right {
+        text-align: center;
+        margin-left: 5rem;
+      }
     }
   }
 `;
