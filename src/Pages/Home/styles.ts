@@ -85,7 +85,7 @@ export const Container = styled.div`
   @media (min-width: 1024px) {
     > p {
       font-size: 24px;
-      padding: 0 90px;
+      padding: 0 100px;
     }
     > div {
       width: 50vh;
