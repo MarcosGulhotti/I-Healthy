@@ -5,7 +5,11 @@ import { ProviderChildren, AuthProviderData } from "../../Types";
 const AuthContext = createContext<AuthProviderData>({} as AuthProviderData);
 
 export const AuthProvider = ({ children }: ProviderChildren) => {
-  const [isAuth, setIsAuth] = useState<string>(localStorage.getItem('@Kenzie:id') || "null");
+  const [isAuth, setIsAuth] = useState<string>(
+    localStorage.getItem("@Kenzie:id") || "null"
+  );
+
+  console.log(isAuth);
 
   return (
     <AuthContext.Provider value={{ isAuth, setIsAuth }}>

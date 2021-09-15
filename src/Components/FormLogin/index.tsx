@@ -16,7 +16,7 @@ import { useUser } from "../../Providers/User";
 
 export const FormLogin = () => {
   const { setIsAuth } = useAuth();
-  const { user } = useUser();
+  const { getUser } = useUser();
   const formSchema = yup.object().shape({
     email: yup.string().required("Email obrigatório").email("Email invalido"),
     password: yup
@@ -44,12 +44,19 @@ export const FormLogin = () => {
     setLoading(true);
     try {
       const { data } = await api.post("/login", userData);
+
       setLoading(false);
+
+      getUser(data.user.id);
+
       localStorage.setItem("@Kenzie:id", data.user.id);
+
       setIsAuth(localStorage.getItem("@Kenzie:id") || "null");
-      toast.success(`Seja bem vindo ${user.username}`);
+
       history.push("/dashboard");
-    } catch {
+
+      toast.success(`Seja bem vindo ${data.user.username}`);
+    } catch (e) {
       toast.error("Senha ou email inválido");
       setLoading(false);
     }
