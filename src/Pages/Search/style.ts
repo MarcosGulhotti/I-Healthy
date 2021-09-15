@@ -10,13 +10,15 @@ export const Container = styled.div`
     @media (min-width: 720px){
     .container-card-user{
         width: 280px;
-        margin: 5px;
+        margin: 10px;
     }
     
 
     .box-search{
-        flex-direction: column;
-        justify-content: flex-start;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
         width: 90%;
         padding: 10px;
     }
