@@ -14,13 +14,13 @@ const UserHeader = () => {
   }, []);
 
   return (
-    <Container isPacient={!user.isProfessional}>
+    <Container isPacient={!user?.isProfessional}>
       <div>
         <figure>
           <img src={img} alt="userImage" />
         </figure>
       </div>
-      {!user.isProfessional ? (
+      {!user?.isProfessional ? (
         <User>
           <h2>Paciente</h2>
           <p>{user?.username}</p>
