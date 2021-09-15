@@ -15,11 +15,15 @@ export const Menu = () => {
     setColor(num);
   };
 
+  const handleLogout = () => {
+    localStorage.clear()
+  }
+
   return (
     <StyledMenu>
       <li>
         <Link
-          to="#"
+          to="/dashboard"
           onClick={(e) => moveIndicator(e, 1)}
           className={color === 1 && "active"}
         >
@@ -28,16 +32,18 @@ export const Menu = () => {
       </li>
       <li>
         <Link
-          to="/dashboard"
+          to="/contact"
           onClick={(e) => moveIndicator(e, 2)}
           className={color === 2 && "active"}
         >
-          <i className={`fas fa-user ${color === 2 && "active"}`}></i>
+          <i className={`far fa-id-card ${color === 2 && "active"}`}></i>
         </Link>
       </li>
       <li>
-        <Link to="#" onClick={(e) => moveIndicator(e, 3)}>
-          <i className={`fas fa-plus-circle ${color === 3 && "active"}`}></i>
+        <Link 
+          to="/login" 
+          onClick={() => handleLogout()}>
+          <i className='fas fa-sign-out-alt'></i>
         </Link>
       </li>
       <li>
