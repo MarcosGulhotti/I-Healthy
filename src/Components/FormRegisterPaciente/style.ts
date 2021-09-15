@@ -53,4 +53,12 @@ export const Container = styled.div`
       font-family: var(--Font-Saira);
     }
   }
+  @media (max-width: 320px) {
+    .container-Buttons {
+      .box-right {
+        text-align: center;
+        margin-left: 5rem;
+      }
+    }
+  }
 `;
