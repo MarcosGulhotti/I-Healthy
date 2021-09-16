@@ -64,7 +64,7 @@ export const FormLogin = () => {
   };
 
   return (
-    <Container>
+    <Container className="container-form">
       <form onSubmit={handleSubmit(onSubmit)}>
         <Input
           icon={<HiOutlineMail />}

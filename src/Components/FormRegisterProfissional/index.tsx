@@ -73,8 +73,7 @@ export const FormRegisterProfissional = () => {
       });
       toast.success("Cadastro realizado com sucesso");
       setLoading(false);
-      console.log(data);
-      history.push("/login"); // ou dashboard
+      history.push("/login"); 
     } catch {
       setLoading(false);
     }
@@ -174,11 +173,11 @@ export const FormRegisterProfissional = () => {
             <option value="">Especialidade</option>
             <option value="Cirurgia geral">Cirurgia geral</option>
             <option value="Pediatria">Pediatria</option>
-            <option value="Ginecologia e Obstetrícia">
-              Ginecologia e Obstetrícia
+            <option value="Ginecologia">
+              Ginecologia
             </option>
-            <option value="Ortopedia e Traumatologia">
-              Ortopedia e Traumatologia
+            <option value="Ortopedia">
+              Ortopedia
             </option>
             <option value="Oftalmologia">Oftalmologia</option>
             <option value="Cardiologia">Cardiologia</option>
@@ -186,11 +185,8 @@ export const FormRegisterProfissional = () => {
             <option value="Psiquiatria">Psiquiatria</option>
             <option value="Dermatologia">Dermatologia</option>
             <option value="Otorrinolaringologia">Otorrinolaringologia</option>
-            <option value="Medicina Familiar e Comunitária">
-              Medicina Familiar e Comunitária
-            </option>
-            <option value="Endocrinologia e Metabolismo">
-              Endocrinologia e Metabolismo
+            <option value="Endocrinologia">
+              Endocrinologia
             </option>
             <option value="Cirurgia plástica">Cirurgia plástica</option>
             <option value="Infectologia">Infectologia</option>

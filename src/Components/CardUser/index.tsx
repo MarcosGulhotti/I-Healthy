@@ -11,7 +11,7 @@ export const CardUser = ({
   func,
 }: IUserSearch) => {
   return (
-    <Container>
+    <Container className="container-card-user">
       <div className="box-pai">
         <div className="box box-img"></div>
 

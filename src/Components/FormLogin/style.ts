@@ -43,4 +43,13 @@ export const Container = styled.div`
   p.link {
     margin-bottom: 50px;
   }
+
+  @media (min-width: 1024px) {
+    .container-Buttons {
+      align-self: center;
+      button {
+        height: 60px;
+      }
+    }
+  }
 `;

@@ -14,7 +14,7 @@ export const Container = styled.div`
 
 export const BoxCalendar = styled.div`
   background: var(--Main-Black);
-  height: 60%;
+  height: 74%;
   width: 100%;
   padding: 0rem 5px;
   padding-bottom: 10px;

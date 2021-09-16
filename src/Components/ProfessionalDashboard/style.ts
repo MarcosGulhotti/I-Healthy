@@ -5,6 +5,9 @@ export const Title = styled.h2`
   font-family: var(--Font-Saira);
   margin-top: 2px;
   margin-bottom: 5px;
+  @media (min-width: 1024px) {
+    font-size: 3rem;
+  }
 `;
 export const PContainer = styled.div`
   background-color: var(--Main-Black);
@@ -32,10 +35,11 @@ export const PContainer = styled.div`
 
   @media screen and (min-width: 1024px) {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
 
-    padding-top: 3%;
+    padding-top: 50px;
   }
 `;
 export const PButton = styled.div`
@@ -58,10 +62,10 @@ export const PButton = styled.div`
   flex-direction: column;
   align-items: center;
 
-    @media screen and (min-width: 1024px) {
-      width: 35%;
-      height: 60px;
-      
-      margin-top: 1%;
-    }
+  @media screen and (min-width: 1024px) {
+    width: 35%;
+    height: 60px;
+
+    margin-top: 1%;
+  }
 `;

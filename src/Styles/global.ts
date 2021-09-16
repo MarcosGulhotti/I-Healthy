@@ -19,13 +19,28 @@ const GlobalStyle = createGlobalStyle`
 
     }
 
-    body, div, ul, button, p, img, nav, a, input, h1, h2, select{
+    body, div, ul, li, button, p, img, nav, a, input, h1, h2, select{
         margin: 0;
         padding: 0;
         list-style-type: none;
         box-sizing: border-box;
         text-decoration: none;
         outline: none;
+        ::-webkit-scrollbar {
+      width: 12px;
+    }
+    ::-webkit-scrollbar-track {
+      border: none;
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: lightgray; 
+      border-radius: 8px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--Main-Black); 
+    }
+
     }
     body{
         background-color: var(---Background);

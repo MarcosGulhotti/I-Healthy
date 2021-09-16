@@ -91,4 +91,30 @@ export const StyledCalendar = styled.div`
   .fc .fc-scrollgrid-section-footer table {
     width: 100%;
   }
+  @media (min-width: 1441px) {
+    .fc-media-screen {
+      height: 610px;
+    }
+    .fc-view-harness {
+      height: 680px;
+      max-height: 680px;
+    }
+    .fc-view-harness .fc-view-harness-active {
+      height: 680px;
+    }
+
+    .fc .fc-view-harness-active > .fc-view {
+      height: 640px;
+    }
+    .fc-daygrid-body {
+      width: 100%;
+    }
+    .fc-daygrid-day-frame {
+      height: 180px;
+      max-height: 180px;
+    }
+    .fc-daygrid-day {
+      width: 250px;
+    }
+  }
 `;

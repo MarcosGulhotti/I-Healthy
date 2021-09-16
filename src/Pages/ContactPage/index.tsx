@@ -1,6 +1,8 @@
-import { Menu } from '../../Components/Menu'
-import { StyledContainer, StyledContactDiv } from './style'
-import { ContactCard } from '../../Components/ContactCard'
+import { Menu } from "../../Components/Menu";
+import { StyledContainer, StyledContactDiv } from "./style";
+import { ContactCard } from "../../Components/ContactCard";
+import { MenuDesktop } from "../../Components/MenuDesktop";
+import { motion } from "framer-motion";
 
 const Dados = {
   Marcos: {
@@ -22,50 +24,57 @@ const Dados = {
     github: "https://github.com/tukinhafl",
   },
   Anthony: {
-    name: "Seu nome aqui",
-    img: "sua foto do slack aqui",
-    role: "sua role aqui",
-    cellphone: "seu celular aqui",
-    linkedin:
-      "link do seu linkedin",
-    gitlab: "link do seu gitlab",
-    github: "link do seu github",
+    name: "Anthony Freitas Maciel",
+    img: "https://ca.slack-edge.com/TQZR39SET-U01SZULQYUR-13eaa02e9506-512",
+    role: "Scrum Master",
+    cellphone: "(92) 9 9517-1372",
+    linkedin: "https://www.linkedin.com/in/anthony07m/",
+    gitlab: "https://gitlab.com/Anthony07M",
+    github: "https://github.com/Anthony07M",
   },
   Leonardo: {
     name: "Seu nome aqui",
     img: "sua foto do slack aqui",
     role: "sua role aqui",
     cellphone: "seu celular aqui",
-    linkedin:
-      "link do seu linkedin",
+    linkedin: "link do seu linkedin",
     gitlab: "link do seu gitlab",
     github: "link do seu github",
   },
   Leandro: {
-    name: "Seu nome aqui",
-    img: "sua foto do slack aqui",
-    role: "sua role aqui",
-    cellphone: "seu celular aqui",
+    name: "Leandro Soares da Silva Bezerra",
+    img: "https://ca.slack-edge.com/TQZR39SET-U01RU9TD7HC-bd1d01ce9d40-48",
+    role: "Quality Assurance",
+    cellphone: "(11) 9 6728-3772",
     linkedin:
-      "link do seu linkedin",
-    gitlab: "link do seu gitlab",
-    github: "link do seu github",
-  }
-}
+      "https://www.linkedin.com/in/leandro-soares-da-silva-bezerra-386089177/",
+    gitlab: "https://gitlab.com/LeandroSSB",
+    github: "https://github.com/LeandroSSB",
+  },
+};
 
 export const ContactPage = () => {
-  const { Marcos, Arthur, Anthony, Leonardo, Leandro } = Dados 
+  const { Marcos, Arthur, Anthony, Leonardo, Leandro } = Dados;
 
   return (
+    <motion.div
+    initial={{opacity: 0}}
+    animate={{opacity: 1}}
+    exit={{opacity: 0}}
+    transition={{duration: 1}}
+    >
+
     <StyledContainer>
+      <MenuDesktop />
       <StyledContactDiv>
-        <ContactCard Dados={Marcos}/>
-        <ContactCard Dados={Arthur}/>
-        <ContactCard Dados={Anthony}/>
-        <ContactCard Dados={Leonardo}/>
-        <ContactCard Dados={Leandro}/>
+        <ContactCard Dados={Marcos} />
+        <ContactCard Dados={Arthur} />
+        <ContactCard Dados={Anthony} />
+        <ContactCard Dados={Leonardo} />
+        <ContactCard Dados={Leandro} />
       </StyledContactDiv>
       <Menu />
     </StyledContainer>
-  )
-}
+    </motion.div>
+  );
+};

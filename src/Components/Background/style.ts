@@ -76,7 +76,7 @@ export const StyledBackground = styled.div`
       left: 330px;
       margin-bottom: 10rem;
     }
-    div {
+    > div {
       width: 50%;
     }
     button {
