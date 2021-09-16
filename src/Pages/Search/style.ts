@@ -9,7 +9,7 @@ export const Container = styled.div`
 
     @media (min-width: 720px){
     .container-card-user{
-        width: 280px;
+        width: 330px;
         margin: 10px;
     }
     

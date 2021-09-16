@@ -2,6 +2,7 @@ import { Menu } from "../../Components/Menu";
 import { StyledContainer, StyledContactDiv } from "./style";
 import { ContactCard } from "../../Components/ContactCard";
 import { MenuDesktop } from "../../Components/MenuDesktop";
+import { motion } from "framer-motion";
 
 const Dados = {
   Marcos: {
@@ -23,13 +24,13 @@ const Dados = {
     github: "https://github.com/tukinhafl",
   },
   Anthony: {
-    name: "Seu nome aqui",
-    img: "sua foto do slack aqui",
-    role: "sua role aqui",
-    cellphone: "seu celular aqui",
-    linkedin: "link do seu linkedin",
-    gitlab: "link do seu gitlab",
-    github: "link do seu github",
+    name: "Anthony Freitas Maciel",
+    img: "https://ca.slack-edge.com/TQZR39SET-U01SZULQYUR-13eaa02e9506-512",
+    role: "Scrum Master",
+    cellphone: "(92) 9 9517-1372",
+    linkedin: "https://www.linkedin.com/in/anthony07m/",
+    gitlab: "https://gitlab.com/Anthony07M",
+    github: "https://github.com/Anthony07M",
   },
   Leonardo: {
     name: "Seu nome aqui",
@@ -55,6 +56,13 @@ export const ContactPage = () => {
   const { Marcos, Arthur, Anthony, Leonardo, Leandro } = Dados;
 
   return (
+    <motion.div
+    initial={{opacity: 0}}
+    animate={{opacity: 1}}
+    exit={{opacity: 0}}
+    transition={{duration: 1}}
+    >
+
     <StyledContainer>
       <MenuDesktop />
       <StyledContactDiv>
@@ -66,5 +74,6 @@ export const ContactPage = () => {
       </StyledContactDiv>
       <Menu />
     </StyledContainer>
+    </motion.div>
   );
 };
