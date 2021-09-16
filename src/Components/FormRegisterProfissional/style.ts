@@ -60,4 +60,33 @@ export const Container = styled.div`
       }
     }
   }
+  @media (min-width: 1024px) {
+    margin-top: 10rem;
+    display: flex;
+    button {
+      width: 250px;
+      height: 60px;
+    }
+    .link {
+      margin-bottom: 3rem;
+      position: relative;
+      > a {
+        font-size: 20px;
+      }
+    }
+    .container-inputs {
+      max-height: 416px;
+    }
+    .container-Buttons {
+      margin: 0 auto;
+      margin-left: 3rem;
+      .box-right {
+        text-align: center;
+        margin-left: 15rem;
+      }
+      .box-left {
+        margin-right: 15rem;
+      }
+    }
+  }
 `;
