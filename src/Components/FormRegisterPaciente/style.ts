@@ -61,4 +61,29 @@ export const Container = styled.div`
       }
     }
   }
+  @media (min-width: 1024px) {
+    margin-top: 10rem;
+    display: flex;
+    button {
+      width: 250px;
+      height: 60px;
+    }
+    .link {
+      margin-bottom: 3rem;
+      position: relative;
+    }
+    .container-inputs {
+      height: 26rem;
+      overflow: hidden;
+      max-width: 50vw;
+    }
+    .container-Buttons {
+      margin: 0 auto;
+      margin-left: 5rem;
+      .box-right {
+        text-align: center;
+        margin-left: 5rem;
+      }
+    }
+  }
 `;
