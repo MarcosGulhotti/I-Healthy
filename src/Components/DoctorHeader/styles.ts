@@ -32,6 +32,19 @@ export const Container = styled.div<{ isPacient: boolean }>`
     }
     padding-bottom: 15px;
   }
+  //desktop
+  @media (min-width: 1024px) {
+    justify-content: space-evenly;
+    padding-bottom: 25px;
+    > div {
+      > figure {
+        width: 100px;
+        height: 100px;
+        > img {
+        }
+      }
+    }
+  }
 `;
 export const User = styled.div`
   display: flex;
@@ -75,6 +88,20 @@ export const User = styled.div`
       width: 202px;
     }
   }
+  //desktop
+  @media (min-width: 1024px) {
+    h2 {
+      font-size: 2.5rem;
+    }
+    p {
+      font-size: 30px;
+      font-family: var(--Font-Saira);
+    }
+    button {
+      width: 250px;
+      height: 28.87px;
+    }
+  }
 `;
 export const Modal = styled.div<{ modal: boolean }>`
   position: absolute;
@@ -102,5 +129,16 @@ export const Modal = styled.div<{ modal: boolean }>`
 
   @media (max-width: 400px) {
     left: 30%;
+  }
+  //desktop
+  @media (min-width: 1024px) {
+    top: 21%;
+    left: 53%;
+  }
+  @media (min-width: 1440px) {
+    left: 57%;
+  }
+  @media (min-width: 1080px) {
+    left: 59%;
   }
 `;

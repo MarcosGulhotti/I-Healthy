@@ -30,7 +30,7 @@ const GlobalStyle = createGlobalStyle`
       width: 12px;
     }
     ::-webkit-scrollbar-track {
-      border: 1px solid black;
+      border: none;
       border-radius: 10px;
     }
     ::-webkit-scrollbar-thumb {
@@ -38,7 +38,7 @@ const GlobalStyle = createGlobalStyle`
       border-radius: 8px;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: var(--Main-White); 
+      background: var(--Main-Black); 
     }
 
     }

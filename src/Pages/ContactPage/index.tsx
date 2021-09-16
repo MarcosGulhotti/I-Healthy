@@ -41,13 +41,14 @@ const Dados = {
     github: "link do seu github",
   },
   Leandro: {
-    name: "Seu nome aqui",
-    img: "sua foto do slack aqui",
-    role: "sua role aqui",
-    cellphone: "seu celular aqui",
-    linkedin: "link do seu linkedin",
-    gitlab: "link do seu gitlab",
-    github: "link do seu github",
+    name: "Leandro Soares da Silva Bezerra",
+    img: "https://ca.slack-edge.com/TQZR39SET-U01RU9TD7HC-bd1d01ce9d40-48",
+    role: "Quality Assurance",
+    cellphone: "(11) 9 6728-3772",
+    linkedin:
+      "https://www.linkedin.com/in/leandro-soares-da-silva-bezerra-386089177/",
+    gitlab: "https://gitlab.com/LeandroSSB",
+    github: "https://github.com/LeandroSSB",
   },
 };
 
