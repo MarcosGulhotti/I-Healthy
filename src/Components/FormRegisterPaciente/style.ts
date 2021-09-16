@@ -71,6 +71,9 @@ export const Container = styled.div`
     .link {
       margin-bottom: 3rem;
       position: relative;
+      > a {
+        font-size: 20px;
+      }
     }
     .container-inputs {
       height: 26rem;
@@ -82,7 +85,10 @@ export const Container = styled.div`
       margin-left: 5rem;
       .box-right {
         text-align: center;
-        margin-left: 5rem;
+        margin-left: 15rem;
+      }
+      .box-left {
+        margin-right: 15rem;
       }
     }
   }

@@ -70,16 +70,22 @@ export const Container = styled.div`
     .link {
       margin-bottom: 3rem;
       position: relative;
+      > a {
+        font-size: 20px;
+      }
     }
     .container-inputs {
       max-height: 416px;
     }
     .container-Buttons {
       margin: 0 auto;
-      margin-left: 5rem;
+      margin-left: 3rem;
       .box-right {
         text-align: center;
-        margin-left: 5rem;
+        margin-left: 15rem;
+      }
+      .box-left {
+        margin-right: 15rem;
       }
     }
   }
