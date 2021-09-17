@@ -29,7 +29,7 @@ export const FormRegisterPaciente = () => {
     email: yup
       .string()
       .required("Email obrigatório")
-      .email("Email obrigatŕoio"),
+      .email("Email obrigatório"),
     password: yup
       .string()
       .min(8, "Mínimo de 8 dígitos")
