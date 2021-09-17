@@ -77,7 +77,7 @@ export const Container = styled.div`
     }
     .container-inputs {
       height: 26rem;
-      overflow: hidden;
+      overflow: auto;
       max-width: 50vw;
     }
     .container-Buttons {
